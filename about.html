@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>クラブ紹介｜安原スポーツクラブ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --green:       #0f8c45;
+      --green-dark:  #075c2c;
+      --green-mid:   #1aab56;
+      --lime:        #aadd2b;
+      --lime-bright: #c8f035;
+      --sky:         #e0f7fa;
+      --sky-mid:     #4dd0e1;
+      --white:       #ffffff;
+      --offwhite:    #f6faf2;
+      --dark:        #0d1f10;
+      --gray:        #5a7060;
+      --gray-light:  #dcebd4;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: var(--offwhite);
+      color: var(--dark);
+      overflow-x: hidden;
+    }
+
+    /* ─── HEADER ─── */
+    #header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      height: 72px;
+      background: rgba(7, 92, 44, 0.97);
+      backdrop-filter: blur(16px);
+      border-bottom: 3px solid var(--lime);
+      transition: height 0.3s;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .logo-ball {
+      width: 46px; height: 46px;
+      background: var(--lime);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      transition: transform 0.3s;
+    }
+
+    .logo:hover .logo-ball { transform: rotate(20deg) scale(1.1); }
+
+    .logo-texts { display: flex; flex-direction: column; gap: 1px; }
+
+    .logo-main {
+      font-family: 'Righteous', cursive;
+      font-size: 17px;
+      color: var(--lime);
+      letter-spacing: 1.5px;
+      line-height: 1;
+    }
+
+    .logo-sub {
+      font-size: 10px;
+      color: rgba(255,255,255,0.6);
+      font-weight: 300;
+      letter-spacing: 1px;
+    }
+
+    nav { display: flex; align-items: center; gap: 2px; }
+
+    nav a {
+      text-decoration: none;
+      color: rgba(255,255,255,0.8);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 8px 13px;
+      border-radius: 6px;
+      transition: color 0.2s, background 0.2s;
+    }
+
+    nav a:hover,
+    nav a.current { color: var(--lime); background: rgba(170,221,43,0.12); }
+
+    .nav-cta {
+      background: var(--lime) !important;
+      color: var(--dark) !important;
+      border-radius: 30px !important;
+      padding: 9px 22px !important;
+      margin-left: 10px;
+      font-weight: 900 !important;
+      letter-spacing: 0.5px !important;
+      transition: transform 0.2s, box-shadow 0.2s, background 0.2s !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--lime-bright) !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 6px 20px rgba(170,221,43,0.4) !important;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 26px; height: 2.5px;
+      background: var(--lime);
+      border-radius: 3px;
+    }
+
+    /* MOBILE MENU */
+    .mobile-menu {
+      display: none;
+      position: fixed; inset: 0;
+      background: var(--dark);
+      z-index: 199;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mobile-menu.open { display: flex; }
+
+    .mobile-menu a {
+      font-family: 'Righteous', cursive;
+      font-size: 36px;
+      color: white;
+      text-decoration: none;
+      letter-spacing: 2px;
+      padding: 18px 40px;
+      transition: color 0.2s;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      width: 100%;
+      text-align: center;
+    }
+
+    .mobile-menu a:hover { color: var(--lime); }
+
+    .mobile-cta-sp {
+      margin-top: 24px !important;
+      background: var(--lime) !important;
+      color: var(--dark) !important;
+      border-radius: 40px !important;
+      width: auto !important;
+      padding: 14px 48px !important;
+      border-bottom: none !important;
+    }
+
+    .mobile-close {
+      position: absolute;
+      top: 20px; right: 24px;
+      background: none; border: none;
+      color: white; font-size: 28px; cursor: pointer;
+    }
+
+    /* ─── PAGE HERO ─── */
+    .page-hero {
+      margin-top: 72px;
+      position: relative;
+      background: linear-gradient(140deg, var(--green-dark) 0%, var(--green) 60%, var(--green-mid) 100%);
+      padding: 72px 48px 110px;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    /* Diagonal bottom cut */
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0; right: 0;
+      height: 72px;
+      background: var(--offwhite);
+      clip-path: polygon(0 100%, 100% 0, 100% 100%);
+    }
+
+    /* Deco circles */
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(170,221,43,0.14) 0%, transparent 70%);
+      top: -100px; right: -80px;
+      pointer-events: none;
+    }
+
+    .ph-deco {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(77,208,225,0.12) 0%, transparent 70%);
+      width: 260px; height: 260px;
+      bottom: -60px; left: 5%;
+      pointer-events: none;
+    }
+
+    .ph-emoji {
+      position: absolute;
+      font-size: 100px;
+      opacity: 0.08;
+      right: 6%;
+      top: 50%;
+      transform: translateY(-50%) rotate(15deg);
+      animation: floatSpin 8s ease-in-out infinite;
+    }
+
+    @keyframes floatSpin {
+      0%,100% { transform: translateY(-50%) rotate(0deg); }
+      50%      { transform: translateY(calc(-50% - 16px)) rotate(20deg); }
+    }
+
+    .page-hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(170,221,43,0.18);
+      border: 1px solid rgba(170,221,43,0.35);
+      border-radius: 30px;
+      padding: 6px 18px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--lime);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      position: relative; z-index: 1;
+    }
+
+    .page-hero h1 {
+      font-family: 'Righteous', cursive;
+      font-size: clamp(40px, 6vw, 76px);
+      color: white;
+      letter-spacing: 2px;
+      line-height: 1.05;
+      position: relative; z-index: 1;
+      margin-bottom: 14px;
+    }
+
+    .page-hero h1 span { color: var(--lime); }
+
+    .page-hero p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.72);
+      font-weight: 300;
+      line-height: 1.8;
+      position: relative; z-index: 1;
+    }
+
+    /* ─── CONTENT WRAPPER ─── */
+    .content-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px 96px;
+    }
+
+    /* ─── SECTION LABEL ─── */
+    .sec-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 10px;
+    }
+
+    .sec-label::before {
+      content: '';
+      width: 22px; height: 3px;
+      background: var(--lime);
+      border-radius: 2px;
+    }
+
+    .sec-title {
+      font-family: 'Righteous', cursive;
+      font-size: clamp(28px, 3.5vw, 46px);
+      line-height: 1.1;
+      color: var(--dark);
+      margin-bottom: 28px;
+      letter-spacing: 1px;
+    }
+
+    .sec-title .ac { color: var(--green); }
+
+    /* ─── PROFILE BLOCK ─── */
+    .profile-block {
+      padding-top: 72px;
+    }
+
+    .profile-card {
+      background: white;
+      border-radius: 24px;
+      padding: 40px 44px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+      border-left: 5px solid var(--lime);
+      margin-bottom: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .profile-card::before {
+      content: '2009';
+      position: absolute;
+      right: -10px; top: -20px;
+      font-family: 'Righteous', cursive;
+      font-size: 120px;
+      color: var(--lime);
+      opacity: 0.07;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .profile-card p {
+      font-size: 16px;
+      line-height: 2;
+      color: var(--gray);
+      font-weight: 300;
+      position: relative; z-index: 1;
+    }
+
+    .profile-card strong {
+      color: var(--green-dark);
+      font-weight: 700;
+    }
+
+    /* ─── ORG TABLE ─── */
+    .org-block { margin-bottom: 64px; }
+
+    .block-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .block-icon {
+      width: 48px; height: 48px;
+      background: var(--lime);
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(170,221,43,0.3);
+    }
+
+    .block-title {
+      font-family: 'Righteous', cursive;
+      font-size: 24px;
+      color: var(--dark);
+      letter-spacing: 1px;
+    }
+
+    .org-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    }
+
+    .org-table tr { transition: background 0.2s; }
+    .org-table tr:hover td { background: var(--offwhite); }
+
+    .org-table th,
+    .org-table td {
+      padding: 16px 22px;
+      text-align: left;
+      border-bottom: 1px solid var(--gray-light);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .org-table th {
+      background: var(--green);
+      color: white;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      width: 28%;
+      vertical-align: top;
+    }
+
+    .org-table td {
+      background: white;
+      color: var(--dark);
+      font-weight: 400;
+    }
+
+    .org-table tr:last-child th,
+    .org-table tr:last-child td { border-bottom: none; }
+
+    .tel-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--offwhite);
+      border: 1px solid var(--gray-light);
+      border-radius: 8px;
+      padding: 4px 12px;
+      font-size: 13px;
+      margin-top: 6px;
+      color: var(--gray);
+    }
+
+    /* ─── AWARDS ─── */
+    .awards-block { margin-bottom: 64px; }
+
+    .award-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 8px;
+    }
+
+    .award-card {
+      background: white;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+      transition: transform 0.25s, box-shadow 0.25s;
+      border-bottom: 4px solid var(--lime);
+    }
+
+    .award-card:nth-child(2) { border-bottom-color: var(--sky-mid); }
+
+    .award-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.11);
+    }
+
+    .award-img-wrap {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, var(--offwhite), var(--gray-light));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 64px;
+      overflow: hidden;
+    }
+
+    .award-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .award-label {
+      padding: 18px 22px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .award-label-icon {
+      width: 36px; height: 36px;
+      background: var(--lime);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .award-card:nth-child(2) .award-label-icon { background: var(--sky-mid); }
+
+    .award-label-text {
+      font-family: 'Righteous', cursive;
+      font-size: 16px;
+      color: var(--dark);
+      letter-spacing: 0.5px;
+    }
+
+    /* ─── CTA STRIP ─── */
+    .cta-strip {
+      background: linear-gradient(135deg, var(--green-dark), var(--green));
+      border-radius: 24px;
+      padding: 44px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-strip::before {
+      content: '⚽';
+      position: absolute;
+      font-size: 120px;
+      opacity: 0.07;
+      right: 20px; top: 50%;
+      transform: translateY(-50%) rotate(20deg);
+    }
+
+    .cta-strip-text h3 {
+      font-family: 'Righteous', cursive;
+      font-size: 26px;
+      color: white;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .cta-strip-text p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.72);
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    .btn-lime {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--lime);
+      color: var(--dark);
+      padding: 15px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 900;
+      font-size: 15px;
+      white-space: nowrap;
+      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+      flex-shrink: 0;
+    }
+
+    .btn-lime:hover {
+      background: var(--lime-bright);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(170,221,43,0.45);
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.55);
+      padding: 56px 48px 28px;
+      position: relative;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(to right, var(--lime), var(--sky-mid), var(--green));
+    }
+
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 56px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      margin-bottom: 24px;
+    }
+
+    .footer-logo {
+      display: flex; align-items: center; gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .footer-logo .logo-ball {
+      width: 40px; height: 40px; font-size: 18px;
+    }
+
+    .footer-logo .logo-main { font-size: 15px; }
+
+    .footer-desc { font-size: 13px; line-height: 1.9; font-weight: 300; }
+
+    .footer-col h4 {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--lime);
+      margin-bottom: 18px;
+    }
+
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+
+    .footer-col a {
+      text-decoration: none;
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      font-weight: 300;
+      transition: color 0.2s;
+      display: flex; align-items: center; gap: 6px;
+    }
+
+    .footer-col a::before { content: '→'; font-size: 10px; color: var(--lime); }
+    .footer-col a:hover { color: white; }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      flex-wrap: wrap; gap: 8px;
+    }
+
+    /* Page top */
+    #pagetop {
+      position: fixed;
+      bottom: 24px; right: 24px;
+      width: 50px; height: 50px;
+      background: var(--lime);
+      color: var(--dark);
+      border-radius: 50%;
+      display: none;
+      align-items: center; justify-content: center;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: 900;
+      box-shadow: 0 6px 20px rgba(170,221,43,0.45);
+      z-index: 100;
+      transition: transform 0.2s;
+    }
+
+    #pagetop:hover { transform: translateY(-4px); }
+
+    /* ─── REVEAL ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      #header { padding: 0 20px; }
+      nav { display: none; }
+      .hamburger { display: flex; }
+      .page-hero { padding: 56px 20px 100px; }
+      .content-wrap { padding: 0 16px 72px; }
+      .profile-card { padding: 28px 20px; }
+      .cta-strip { padding: 28px 20px; flex-direction: column; align-items: flex-start; }
+      .footer-top { grid-template-columns: 1fr; gap: 28px; }
+      .footer-bottom { justify-content: center; text-align: center; }
+      footer { padding: 48px 20px 24px; }
+    }
+
+    @media (max-width: 768px) {
+      .logo-sub { display: none; }
+      .page-hero h1 { font-size: 44px; }
+      .ph-emoji { display: none; }
+    }
+
+    @media (max-width: 600px) {
+      .award-grid { grid-template-columns: 1fr; }
+      .org-table th, .org-table td { padding: 12px 14px; font-size: 13px; }
+      .org-table th { width: 100%; display: block; border-bottom: none; padding-bottom: 4px; }
+      .org-table td { display: block; width: 100%; }
+      .org-table tr { display: block; margin-bottom: 4px; }
+      .profile-card { padding: 22px 16px; }
+    }
+
+    @media (max-width: 400px) {
+      .page-hero h1 { font-size: 36px; }
+      .logo-main { font-size: 14px; }
+      .logo-ball { width: 38px; height: 38px; font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="header">
+  <a href="index.html" class="logo">
+    <div class="logo-ball">⚽</div>
+    <div class="logo-texts">
+      <span class="logo-main">安原スポーツクラブ</span>
+      <span class="logo-sub">総合型地域スポーツクラブ・和歌山</span>
+    </div>
+  </a>
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="about.html" class="current">クラブ紹介</a>
+    <a href="info.html">活動内容</a>
+    <a href="report.html">活動報告</a>
+    <a href="trial.html">体験・入会</a>
+    <a href="members.html">会員様向け</a>
+    <a href="contact.html">お問い合わせ</a>
+    <a href="trial.html" class="nav-cta">⚡ 無料体験</a>
+  </nav>
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">✕</button>
+  <a href="index.html">HOME</a>
+  <a href="about.html">クラブ紹介</a>
+  <a href="info.html">活動内容</a>
+  <a href="report.html">活動報告</a>
+  <a href="trial.html">体験・入会</a>
+  <a href="members.html">会員様向け</a>
+  <a href="contact.html">お問い合わせ</a>
+  <a href="trial.html" class="mobile-cta-sp">⚡ 無料体験はこちら</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="ph-deco"></div>
+  <div class="ph-emoji"></div>
+  <p class="page-hero-eyebrow">ABOUT</p>
+  <h1>クラブ<span>紹介</span></h1>
+  <p>安原スポーツクラブについて</p>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="content-wrap">
+
+  <!-- PROFILE -->
+  <div class="profile-block reveal">
+    <span class="sec-label">PROFILE</span>
+    <h2 class="sec-title">プロフィール</h2>
+    <div class="profile-card">
+      <p>
+        安原スポーツクラブは、<strong>2009年にTOTOの援助を受け、設立</strong>いたしました。<br>
+        地域の子どもたちの健全な成長とスポーツを通じた交流を目的に、
+        和歌山市安原地区を中心に多彩なスポーツ教室を展開しています。
+        青少年の健全育成・健康づくり・地域コミュニティの活性化を
+        3つの柱として、日々活動しています。
+      </p>
+    </div>
+  </div>
+
+  <!-- ORG -->
+  <div class="org-block reveal">
+    <div class="block-header">
+      <div class="block-icon"></div>
+      <h3 class="block-title">組織・役員</h3>
+    </div>
+    <table class="org-table">
+      <tbody>
+        <tr>
+          <th>会長</th>
+          <td>橋本　徳夫</td>
+        </tr>
+        <tr>
+          <th>副会長</th>
+          <td>寺下俊人・沖　賢蔵</td>
+        </tr>
+        <tr>
+          <th>顧問</th>
+          <td>吉本昌純・川端康史・山田好雄</td>
+        </tr>
+        <tr>
+          <th>運営委員</th>
+          <td>城野　淑・宮廻英利美・中谷千晶・前　晴夫・馬場利幸</td>
+        </tr>
+        <tr>
+          <th>監事</th>
+          <td>宮崎一良・西山恵子</td>
+        </tr>
+        <tr>
+          <th>事務局</th>
+          <td>
+            馬場秀典　馬場正人
+            <br>
+            <span class="tel-badge"> 000-000-0000（18時〜21時）</span>
+            <span class="tel-badge" style="margin-left:6px;"> FAX 000-000-000</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- AWARDS -->
+  <div class="awards-block reveal">
+    <div class="block-header">
+      <div class="block-icon"></div>
+      <h3 class="block-title">表彰・認定</h3>
+    </div>
+    <div class="award-grid">
+      <div class="award-card">
+        <div class="award-img-wrap">
+          <img src="images/award1.jpg" alt="表彰状" onerror="this.style.display='none';this.parentNode.innerHTML=''">
+        </div>
+        <div class="award-label">
+          <div class="award-label-icon"></div>
+          <span class="award-label-text">表彰状</span>
+        </div>
+      </div>
+      <div class="award-card">
+        <div class="award-img-wrap">
+          <img src="images/award2.jpg" alt="スポーツ鬼ごっこ認定証" onerror="this.style.display='none';this.parentNode.innerHTML=''">
+        </div>
+        <div class="award-label">
+          <div class="award-label-icon" style="background:var(--sky-mid);"></div>
+          <span class="award-label-text">スポーツ鬼ごっこ認定証</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA STRIP -->
+  <div class="cta-strip reveal">
+    <div class="cta-strip-text">
+      <h3> 無料体験、随時受付中！</h3>
+      <p>「どんな雰囲気か知りたい」という方も大歓迎。<br>保護者の見学ももちろんOKです。</p>
+    </div>
+    <a href="trial.html" class="btn-lime">体験・入会はこちら →</a>
+  </div>
+
+</div><!-- /content-wrap -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">
+          <div class="logo-ball">⚽</div>
+          <div class="logo-texts">
+            <span class="logo-main">安原スポーツクラブ</span>
+          </div>
+        </div>
+        <p class="footer-desc">地域の子どもたちの健全な成長と、スポーツを通じた交流を目的に活動しています。</p>
+      </div>
+      <div class="footer-col">
+        <h4>MENU</h4>
+        <ul>
+          <li><a href="about.html">クラブ紹介</a></li>
+          <li><a href="info.html">活動内容</a></li>
+          <li><a href="trial.html">体験・入会</a></li>
+          <li><a href="fee.html">会費のご案内</a></li>
+          <li><a href="rules.html">会則</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>SUPPORT</h4>
+        <ul>
+          <li><a href="members.html">会員様向け</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+          <li><a href="news.html">お知らせ一覧</a></li>
+          <li><a href="report.html">活動報告</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright © 安原スポーツクラブ All Rights Reserved.</p>
+      <p style="font-size:11px">Web Design: Template-Party</p>
+    </div>
+  </div>
+</footer>
+
+<a href="#" id="pagetop">↑</a>
+
+<script>
+  /* HAMBURGER */
+  document.getElementById('hamburger').addEventListener('click', () =>
+    document.getElementById('mobileMenu').classList.add('open'));
+  document.getElementById('mobileClose').addEventListener('click', () =>
+    document.getElementById('mobileMenu').classList.remove('open'));
+
+  /* SCROLL REVEAL */
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(r => io.observe(r));
+
+  /* HEADER SHRINK + PAGETOP */
+  const header = document.getElementById('header');
+  const pagetop = document.getElementById('pagetop');
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    header.style.height = y > 60 ? '60px' : '72px';
+    pagetop.style.display = y > 350 ? 'flex' : 'none';
+  });
+</script>
+</body>
+</html>

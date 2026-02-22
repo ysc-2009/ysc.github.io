@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>活動報告｜安原スポーツクラブ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --green:       #0f8c45;
+      --green-dark:  #075c2c;
+      --green-mid:   #1aab56;
+      --lime:        #aadd2b;
+      --lime-bright: #c8f035;
+      --sky:         #4dd0e1;
+      --orange:      #f97316;
+      --purple:      #a855f7;
+      --offwhite:    #f6faf2;
+      --dark:        #0d1f10;
+      --gray:        #5a7060;
+      --gray-light:  #dcebd4;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: var(--offwhite);
+      color: var(--dark);
+      overflow-x: hidden;
+    }
+
+    /* ─── HEADER ─── */
+    #header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 72px;
+      background: rgba(7,92,44,0.97); backdrop-filter: blur(16px);
+      border-bottom: 3px solid var(--lime); transition: height 0.3s;
+    }
+
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0; }
+    .logo-ball {
+      width: 46px; height: 46px; background: var(--lime); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25); transition: transform 0.3s;
+    }
+    .logo:hover .logo-ball { transform: rotate(20deg) scale(1.1); }
+    .logo-texts { display: flex; flex-direction: column; gap: 1px; }
+    .logo-main { font-family: 'Righteous', cursive; font-size: 17px; color: var(--lime); letter-spacing: 1.5px; line-height: 1; }
+    .logo-sub { font-size: 10px; color: rgba(255,255,255,0.6); font-weight: 300; letter-spacing: 1px; }
+
+    nav { display: flex; align-items: center; gap: 2px; }
+    nav a {
+      text-decoration: none; color: rgba(255,255,255,0.8);
+      font-size: 12px; font-weight: 700; letter-spacing: 1px;
+      padding: 8px 12px; border-radius: 6px;
+      transition: color 0.2s, background 0.2s;
+    }
+    nav a:hover, nav a.current { color: var(--lime); background: rgba(170,221,43,0.12); }
+    .nav-cta {
+      background: var(--lime) !important; color: var(--dark) !important;
+      border-radius: 30px !important; padding: 9px 20px !important;
+      margin-left: 8px; font-weight: 900 !important;
+      transition: transform 0.2s, box-shadow 0.2s, background 0.2s !important;
+    }
+    .nav-cta:hover {
+      background: var(--lime-bright) !important; transform: translateY(-2px) !important;
+      box-shadow: 0 6px 20px rgba(170,221,43,0.4) !important;
+    }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 26px; height: 2.5px; background: var(--lime); border-radius: 3px; }
+
+    .mobile-menu {
+      display: none; position: fixed; inset: 0; background: var(--dark);
+      z-index: 199; flex-direction: column; align-items: center; justify-content: center;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: 'Righteous', cursive; font-size: 28px; color: white;
+      text-decoration: none; letter-spacing: 2px; padding: 14px 40px;
+      transition: color 0.2s; border-bottom: 1px solid rgba(255,255,255,0.06);
+      width: 100%; text-align: center;
+    }
+    .mobile-menu a:hover { color: var(--lime); }
+    .mobile-cta-sp {
+      margin-top: 20px !important; background: var(--lime) !important;
+      color: var(--dark) !important; border-radius: 40px !important;
+      width: auto !important; padding: 14px 48px !important; border-bottom: none !important;
+    }
+    .mobile-close { position: absolute; top: 20px; right: 24px; background: none; border: none; color: white; font-size: 28px; cursor: pointer; }
+
+    /* ─── PAGE HERO ─── */
+    .page-hero {
+      margin-top: 72px; position: relative;
+      background: linear-gradient(140deg, var(--green-dark) 0%, var(--green) 60%, var(--green-mid) 100%);
+      padding: 72px 48px 110px; overflow: hidden; text-align: center;
+    }
+    .page-hero::after {
+      content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 72px;
+      background: var(--offwhite); clip-path: polygon(0 100%, 100% 0, 100% 100%);
+    }
+    .page-hero::before {
+      content: ''; position: absolute; width: 400px; height: 400px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(170,221,43,0.14) 0%, transparent 70%);
+      top: -100px; right: -80px; pointer-events: none;
+    }
+    .ph-deco {
+      position: absolute; border-radius: 50%;
+      background: radial-gradient(circle, rgba(77,208,225,0.12) 0%, transparent 70%);
+      width: 260px; height: 260px; bottom: -60px; left: 5%;
+    }
+    .ph-emoji {
+      position: absolute; font-size: 100px; opacity: 0.08;
+      right: 6%; top: 50%; transform: translateY(-50%) rotate(10deg);
+      animation: floatSpin 8s ease-in-out infinite;
+    }
+    @keyframes floatSpin {
+      0%,100% { transform: translateY(-50%) rotate(0deg); }
+      50%      { transform: translateY(calc(-50% - 16px)) rotate(20deg); }
+    }
+    .page-hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(170,221,43,0.18); border: 1px solid rgba(170,221,43,0.35);
+      border-radius: 30px; padding: 6px 18px; font-size: 11px; font-weight: 700;
+      color: var(--lime); letter-spacing: 3px; text-transform: uppercase;
+      margin-bottom: 20px; position: relative; z-index: 1;
+    }
+    .page-hero h1 {
+      font-family: 'Righteous', cursive; font-size: clamp(40px, 6vw, 76px); color: white;
+      letter-spacing: 2px; line-height: 1.05; position: relative; z-index: 1; margin-bottom: 14px;
+    }
+    .page-hero h1 span { color: var(--lime); }
+    .page-hero > p { font-size: 15px; color: rgba(255,255,255,0.72); font-weight: 300; line-height: 1.8; position: relative; z-index: 1; }
+
+    /* ─── FILTER BAR ─── */
+    .filter-wrap {
+      max-width: 1100px; margin: 48px auto 0; padding: 0 24px;
+      display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;
+    }
+    .filter-btn {
+      background: white; border: 2px solid var(--gray-light); border-radius: 50px;
+      padding: 10px 22px; font-size: 13px; font-weight: 700; color: var(--gray);
+      cursor: pointer; transition: all 0.2s; font-family: 'Noto Sans JP', sans-serif;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--lime); border-color: var(--lime); color: var(--dark);
+    }
+
+    /* ─── REPORTS GRID ─── */
+    .reports-wrap {
+      max-width: 1100px; margin: 36px auto 80px; padding: 0 24px;
+    }
+    .reports-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+    }
+
+    .report-card {
+      background: white; border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+      transition: transform 0.25s, box-shadow 0.25s;
+      text-decoration: none; color: var(--dark);
+      display: flex; flex-direction: column;
+    }
+    .report-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 44px rgba(0,0,0,0.12);
+    }
+
+    .report-img {
+      width: 100%; height: 200px; object-fit: cover;
+      background: linear-gradient(135deg, var(--green), var(--green-mid));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 56px; flex-shrink: 0;
+    }
+    .report-img img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .report-img-fallback {
+      width: 100%; height: 200px;
+      background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 56px;
+    }
+
+    .report-body {
+      padding: 22px 22px 24px; flex: 1; display: flex; flex-direction: column; gap: 10px;
+    }
+    .report-meta {
+      display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    }
+    .report-date {
+      font-size: 12px; font-weight: 700; color: var(--gray);
+      letter-spacing: 1px;
+    }
+    .report-tag {
+      display: inline-block; border-radius: 30px; padding: 3px 12px;
+      font-size: 11px; font-weight: 700; letter-spacing: 1px;
+    }
+    .tag-soccer   { background: #dcfce7; color: #166534; }
+    .tag-dance    { background: #fae8ff; color: #86198f; }
+    .tag-yoga     { background: #e0f2fe; color: #075985; }
+    .tag-tennis   { background: #fef9c3; color: #854d0e; }
+    .tag-athletic { background: #ffedd5; color: #9a3412; }
+    .tag-onigokko { background: #fee2e2; color: #991b1b; }
+    .tag-event    { background: #f0fdf4; color: #166534; }
+
+    .report-title {
+      font-size: 16px; font-weight: 700; line-height: 1.5; color: var(--dark);
+    }
+    .report-body p {
+      font-size: 13px; color: var(--gray); line-height: 1.75; font-weight: 300; flex: 1;
+    }
+    .report-more {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 12px; font-weight: 700; color: var(--green);
+      margin-top: 4px;
+    }
+    .report-more::after { content: '→'; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--dark); color: rgba(255,255,255,0.55);
+      padding: 56px 48px 28px; position: relative;
+    }
+    footer::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(to right, var(--lime), var(--sky), var(--green));
+    }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-top {
+      display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 56px;
+      padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 24px;
+    }
+    .footer-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+    .footer-logo .logo-ball { width: 40px; height: 40px; font-size: 18px; }
+    .footer-logo .logo-main { font-size: 15px; }
+    .footer-desc { font-size: 13px; line-height: 1.9; font-weight: 300; }
+    .footer-col h4 { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--lime); margin-bottom: 18px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col a {
+      text-decoration: none; font-size: 13px; color: rgba(255,255,255,0.45);
+      font-weight: 300; transition: color 0.2s; display: flex; align-items: center; gap: 6px;
+    }
+    .footer-col a::before { content: '→'; font-size: 10px; color: var(--lime); }
+    .footer-col a:hover { color: white; }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 12px; flex-wrap: wrap; gap: 8px; }
+
+    #pagetop {
+      position: fixed; bottom: 24px; right: 24px; width: 50px; height: 50px;
+      background: var(--lime); color: var(--dark); border-radius: 50%;
+      display: none; align-items: center; justify-content: center;
+      text-decoration: none; font-size: 20px; font-weight: 900;
+      box-shadow: 0 6px 20px rgba(170,221,43,0.45); z-index: 100; transition: transform 0.2s;
+    }
+    #pagetop:hover { transform: translateY(-4px); }
+
+    .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1000px) {
+      .reports-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      #header { padding: 0 20px; height: 64px; }
+      nav { display: none; }
+      .hamburger { display: flex; }
+      .page-hero { padding: 52px 20px 96px; }
+      .ph-emoji { display: none; }
+      .filter-wrap { padding: 0 16px; gap: 8px; }
+      .filter-btn { padding: 9px 16px; font-size: 12px; }
+      .reports-wrap { padding: 0 16px; margin-top: 28px; margin-bottom: 60px; }
+      .reports-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+      .report-img, .report-img-fallback { height: 160px; }
+      .report-body { padding: 16px; }
+      .report-title { font-size: 14px; }
+      footer { padding: 48px 20px 24px; }
+      .footer-top { grid-template-columns: 1fr; gap: 28px; }
+      .footer-bottom { justify-content: center; text-align: center; }
+    }
+
+    @media (max-width: 500px) {
+      .reports-grid { grid-template-columns: 1fr; }
+      .report-img, .report-img-fallback { height: 200px; }
+      .page-hero { padding: 48px 16px 90px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="header">
+  <a href="index.html" class="logo">
+    <div class="logo-ball">⚽</div>
+    <div class="logo-texts">
+      <span class="logo-main">安原スポーツクラブ</span>
+      <span class="logo-sub">総合型地域スポーツクラブ・和歌山</span>
+    </div>
+  </a>
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="about.html">クラブ紹介</a>
+    <a href="info.html">活動内容</a>
+    <a href="report.html" class="current">活動報告</a>
+    <a href="trial.html">体験・入会</a>
+    <a href="members.html">会員様向け</a>
+    <a href="contact.html">お問い合わせ</a>
+    <a href="trial.html" class="nav-cta">⚡ 無料体験</a>
+  </nav>
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">✕</button>
+  <a href="index.html">HOME</a>
+  <a href="about.html">クラブ紹介</a>
+  <a href="info.html">活動内容</a>
+  <a href="report.html">活動報告</a>
+  <a href="trial.html">体験・入会</a>
+  <a href="members.html">会員様向け</a>
+  <a href="contact.html">お問い合わせ</a>
+  <a href="trial.html" class="mobile-cta-sp">⚡ 無料体験はこちら</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="ph-deco"></div>
+  <div class="ph-emoji">📸</div>
+  <p class="page-hero-eyebrow">ACTIVITY REPORT</p>
+  <h1>活動<span>報告</span></h1>
+  <p>クラブのイベント・教室の様子をお届けします！</p>
+</div>
+
+<!-- FILTER -->
+<div class="filter-wrap reveal">
+  <button class="filter-btn active" data-cat="all">すべて</button>
+  <button class="filter-btn" data-cat="soccer">⚽ サッカー</button>
+  <button class="filter-btn" data-cat="onigokko">👹 鬼ごっこ</button>
+  <button class="filter-btn" data-cat="dance">💃 ダンス</button>
+  <button class="filter-btn" data-cat="yoga">🧘 ヨガ</button>
+  <button class="filter-btn" data-cat="tennis">🎾 テニス</button>
+  <button class="filter-btn" data-cat="athletic">🤸 アスレチック</button>
+  <button class="filter-btn" data-cat="event">🎉 イベント</button>
+</div>
+
+<!-- REPORTS GRID -->
+<div class="reports-wrap">
+  <div class="reports-grid" id="reportsGrid">
+
+    <!-- 1 -->
+    <div class="report-card reveal" data-cat="soccer">
+      <div class="report-img-fallback">⚽</div>
+      <div class="report-body">
+        <div class="report-meta">
+          <span class="report-date">2025.11.26</span>
+          <span class="report-tag tag-soccer">サッカー</span>
+        </div>
+        <p class="report-title">智弁学園小学校との交流試合を開催しました！</p>
+        <p>安原小学校グラウンドにて、智弁学園小学校のみなさんと交流試合を行いました。子どもたちは全力でプレーし、たくさんの笑顔があふれました。</p>
+        <span class="report-more">くわしく見る</span>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="report-card reveal" data-cat="onigokko">
+      <div class="report-img-fallback">🏃</div>
+      <div class="report-body">
+        <div class="report-meta">
+          <span class="report-date">2025.03.16</span>
+          <span class="report-tag tag-onigokko">スポーツ鬼ごっこ</span>
+        </div>
+        <p class="report-title">滋賀県希望ヶ丘文化公園でスポーツ鬼ごっこを楽しみました</p>
+        <p>滋賀県希望ヶ丘文化公園の広大な芝生で、スポーツ鬼ごっこを思いきり楽しみました。他クラブとの対戦もあり、刺激的な一日でした。</p>
+        <span class="report-more">くわしく見る</span>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="report-card reveal" data-cat="yoga">
+      <div class="report-img-fallback">🧘</div>
+      <div class="report-body">
+        <div class="report-meta">
+          <span class="report-date">2024 夏</span>
+          <span class="report-tag tag-yoga">ヨガ</span>
+        </div>
+        <p class="report-title">親子ヨガイベントを開催しました</p>
+        <p>夏の特別イベントとして、親子で参加できるヨガ教室を開催しました。普段とは違う穏やかな時間の中で、親子の絆を深めることができました。</p>
+        <span class="report-more">くわしく見る</span>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="report-card reveal" data-cat="dance">
+      <div class="report-img-fallback">💃</div>
+      <div class="report-body">
+        <div class="report-meta">
+          <span class="report-date">2017.03.18</span>
+          <span class="report-tag tag-dance">ダンス</span>
+        </div>
+        <p class="report-title">スポーツフェスティバルでダンスを披露！</p>
+        <p>地域スポーツフェスティバルのステージで、ダンス教室の生徒たちが日頃の練習の成果を元気いっぱいに披露しました。会場は大きな拍手に包まれました。</p>
+        <span class="report-more">くわしく見る</span>
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="report-card reveal" data-cat="tennis">
+      <div class="report-img-fallback">🎾</div>
+      <div class="report-body">
+        <div class="report-meta">
+          <span class="report-date">—</span>
+          <span class="report-tag tag-tennis">ショートテニス</span>
+        </div>
+        <p class="report-title">ショートテニス教室の活動の様子</p>
+        <p>安原小学校体育館でのショートテニス教室の様子です。低学年・高学年に分かれ、楽しくラリーを続けながらテニスの基本を学んでいます。</p>
+        <span class="report-more">くわしく見る</span>
+      </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="report-card reveal" data-cat="yoga">
+      <div class="report-img-fallback">🌿</div>
+      <div class="report-body">
+        <div class="report-meta">
+          <span class="report-date">—</span>
+          <span class="report-tag tag-yoga">ヨガ</span>
+        </div>
+        <p class="report-title">高野山で森林セラピーヨガを体験しました</p>
+        <p>大自然の中の高野山で、森林セラピーと組み合わせた特別ヨガイベントを開催。自然の香りと澄んだ空気の中で、心と体をリフレッシュしました。</p>
+        <span class="report-more">くわしく見る</span>
+      </div>
+    </div>
+
+    <!-- 7 -->
+    <div class="report-card reveal" data-cat="athletic">
+      <div class="report-img-fallback">🤸</div>
+      <div class="report-body">
+        <div class="report-meta">
+          <span class="report-date">—</span>
+          <span class="report-tag tag-athletic">アスレチック</span>
+        </div>
+        <p class="report-title">アスレチック教室の活動レポート</p>
+        <p>様々な運動を通じて体を動かす楽しさを学ぶアスレチック教室。子どもたちが笑顔でチャレンジする姿が印象的でした！</p>
+        <span class="report-more">くわしく見る</span>
+      </div>
+    </div>
+
+    <!-- 8 -->
+    <div class="report-card reveal" data-cat="event">
+      <div class="report-img-fallback">🎉</div>
+      <div class="report-body">
+        <div class="report-meta">
+          <span class="report-date">—</span>
+          <span class="report-tag tag-event">イベント</span>
+        </div>
+        <p class="report-title">クラブ発表会・年間まとめ</p>
+        <p>1年間の活動のまとめとして、各教室が日頃の成果を発表するイベントを開催しました。子どもたちの成長を感じる温かいひとときでした。</p>
+        <span class="report-more">くわしく見る</span>
+      </div>
+    </div>
+
+    <!-- 9 -->
+    <div class="report-card reveal" data-cat="onigokko">
+      <div class="report-img-fallback">👹</div>
+      <div class="report-body">
+        <div class="report-meta">
+          <span class="report-date">—</span>
+          <span class="report-tag tag-onigokko">スポーツ鬼ごっこ</span>
+        </div>
+        <p class="report-title">スポーツ鬼ごっこ大会に参加しました！</p>
+        <p>正式なルールに基づくスポーツ鬼ごっこ大会に参加。チームワークを発揮しながら、白熱した試合を繰り広げました。</p>
+        <span class="report-more">くわしく見る</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">
+          <div class="logo-ball">⚽</div>
+          <div class="logo-texts">
+            <span class="logo-main">安原スポーツクラブ</span>
+          </div>
+        </div>
+        <p class="footer-desc">地域の子どもたちの健全な成長と、スポーツを通じた交流を目的に活動しています。</p>
+      </div>
+      <div class="footer-col">
+        <h4>MENU</h4>
+        <ul>
+          <li><a href="about.html">クラブ紹介</a></li>
+          <li><a href="info.html">活動内容</a></li>
+          <li><a href="report.html">活動報告</a></li>
+          <li><a href="trial.html">体験・入会</a></li>
+          <li><a href="fee.html">会費のご案内</a></li>
+          <li><a href="rules.html">会則</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>SUPPORT</h4>
+        <ul>
+          <li><a href="members.html">会員様向け</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright &copy; 安原スポーツクラブ All Rights Reserved.</p>
+      <p style="font-size:11px">Web Design: Template-Party</p>
+    </div>
+  </div>
+</footer>
+
+<a href="#" id="pagetop">↑</a>
+
+<script>
+  // Hamburger
+  document.getElementById('hamburger').addEventListener('click', () =>
+    document.getElementById('mobileMenu').classList.add('open'));
+  document.getElementById('mobileClose').addEventListener('click', () =>
+    document.getElementById('mobileMenu').classList.remove('open'));
+
+  // Filter
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.report-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const cat = btn.dataset.cat;
+      cards.forEach(card => {
+        if (cat === 'all' || card.dataset.cat === cat) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Reveal on scroll
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(r => io.observe(r));
+
+  // Sticky header + pagetop
+  const header  = document.getElementById('header');
+  const pagetop = document.getElementById('pagetop');
+  window.addEventListener('scroll', () => {
+    header.style.height   = window.scrollY > 60 ? '60px' : '72px';
+    pagetop.style.display = window.scrollY > 350 ? 'flex' : 'none';
+  });
+</script>
+</body>
+</html>

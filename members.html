@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>会員様向け｜安原スポーツクラブ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --green:       #0f8c45;
+      --green-dark:  #075c2c;
+      --green-mid:   #1aab56;
+      --lime:        #aadd2b;
+      --lime-bright: #c8f035;
+      --sky-mid:     #4dd0e1;
+      --orange:      #f97316;
+      --offwhite:    #f6faf2;
+      --dark:        #0d1f10;
+      --gray:        #5a7060;
+      --gray-light:  #dcebd4;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: var(--offwhite);
+      color: var(--dark);
+      overflow-x: hidden;
+    }
+
+    /* ─── HEADER ─── */
+    #header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 72px;
+      background: rgba(7,92,44,0.97); backdrop-filter: blur(16px);
+      border-bottom: 3px solid var(--lime); transition: height 0.3s;
+    }
+
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0; }
+
+    .logo-ball {
+      width: 46px; height: 46px; background: var(--lime); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25); transition: transform 0.3s;
+    }
+
+    .logo:hover .logo-ball { transform: rotate(20deg) scale(1.1); }
+    .logo-texts { display: flex; flex-direction: column; gap: 1px; }
+
+    .logo-main {
+      font-family: 'Righteous', cursive; font-size: 17px;
+      color: var(--lime); letter-spacing: 1.5px; line-height: 1;
+    }
+
+    .logo-sub { font-size: 10px; color: rgba(255,255,255,0.6); font-weight: 300; letter-spacing: 1px; }
+
+    nav { display: flex; align-items: center; gap: 2px; }
+
+    nav a {
+      text-decoration: none; color: rgba(255,255,255,0.8);
+      font-size: 12px; font-weight: 700; letter-spacing: 1px;
+      padding: 8px 13px; border-radius: 6px;
+      transition: color 0.2s, background 0.2s;
+    }
+
+    nav a:hover, nav a.current { color: var(--lime); background: rgba(170,221,43,0.12); }
+
+    .nav-cta {
+      background: var(--lime) !important; color: var(--dark) !important;
+      border-radius: 30px !important; padding: 9px 22px !important;
+      margin-left: 10px; font-weight: 900 !important;
+      transition: transform 0.2s, box-shadow 0.2s, background 0.2s !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--lime-bright) !important; transform: translateY(-2px) !important;
+      box-shadow: 0 6px 20px rgba(170,221,43,0.4) !important;
+    }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 26px; height: 2.5px; background: var(--lime); border-radius: 3px; }
+
+    .mobile-menu {
+      display: none; position: fixed; inset: 0; background: var(--dark);
+      z-index: 199; flex-direction: column; align-items: center; justify-content: center;
+    }
+
+    .mobile-menu.open { display: flex; }
+
+    .mobile-menu a {
+      font-family: 'Righteous', cursive; font-size: 36px; color: white;
+      text-decoration: none; letter-spacing: 2px; padding: 18px 40px;
+      transition: color 0.2s; border-bottom: 1px solid rgba(255,255,255,0.06);
+      width: 100%; text-align: center;
+    }
+
+    .mobile-menu a:hover { color: var(--lime); }
+
+    .mobile-cta-sp {
+      margin-top: 24px !important; background: var(--lime) !important;
+      color: var(--dark) !important; border-radius: 40px !important;
+      width: auto !important; padding: 14px 48px !important; border-bottom: none !important;
+    }
+
+    .mobile-close { position: absolute; top: 20px; right: 24px; background: none; border: none; color: white; font-size: 28px; cursor: pointer; }
+
+    /* ─── PAGE HERO ─── */
+    .page-hero {
+      margin-top: 72px; position: relative;
+      background: linear-gradient(140deg, var(--green-dark) 0%, var(--green) 60%, var(--green-mid) 100%);
+      padding: 72px 48px 110px; overflow: hidden; text-align: center;
+    }
+
+    .page-hero::after {
+      content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 72px;
+      background: var(--offwhite); clip-path: polygon(0 100%, 100% 0, 100% 100%);
+    }
+
+    .page-hero::before {
+      content: ''; position: absolute; width: 400px; height: 400px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(170,221,43,0.14) 0%, transparent 70%);
+      top: -100px; right: -80px; pointer-events: none;
+    }
+
+    .ph-deco {
+      position: absolute; border-radius: 50%;
+      background: radial-gradient(circle, rgba(77,208,225,0.12) 0%, transparent 70%);
+      width: 260px; height: 260px; bottom: -60px; left: 5%;
+    }
+
+    .ph-emoji {
+      position: absolute; font-size: 100px; opacity: 0.08;
+      right: 6%; top: 50%; transform: translateY(-50%) rotate(10deg);
+      animation: floatSpin 8s ease-in-out infinite;
+    }
+
+    @keyframes floatSpin {
+      0%,100% { transform: translateY(-50%) rotate(0deg); }
+      50%      { transform: translateY(calc(-50% - 16px)) rotate(20deg); }
+    }
+
+    .page-hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(170,221,43,0.18); border: 1px solid rgba(170,221,43,0.35);
+      border-radius: 30px; padding: 6px 18px; font-size: 11px; font-weight: 700;
+      color: var(--lime); letter-spacing: 3px; text-transform: uppercase;
+      margin-bottom: 20px; position: relative; z-index: 1;
+    }
+
+    .page-hero h1 {
+      font-family: 'Righteous', cursive; font-size: clamp(40px, 6vw, 76px); color: white;
+      letter-spacing: 2px; line-height: 1.05; position: relative; z-index: 1; margin-bottom: 14px;
+    }
+
+    .page-hero h1 span { color: var(--lime); }
+    .page-hero > p { font-size: 15px; color: rgba(255,255,255,0.72); font-weight: 300; line-height: 1.8; position: relative; z-index: 1; }
+
+    /* ─── JUMP NAV ─── */
+    .jump-wrap { max-width: 1000px; margin: 0 auto; padding: 52px 24px 0; }
+
+    .jump-nav { display: flex; gap: 10px; flex-wrap: wrap; }
+
+    .jump-btn {
+      display: flex; align-items: center; gap: 8px;
+      background: white; border: 2px solid var(--gray-light);
+      border-radius: 30px; padding: 10px 22px;
+      font-size: 13px; font-weight: 700; color: var(--dark);
+      text-decoration: none; transition: all 0.2s;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+
+    .jump-btn:hover {
+      border-color: var(--green); color: var(--green); background: #f0faf4;
+      transform: translateY(-2px); box-shadow: 0 6px 18px rgba(15,140,69,0.12);
+    }
+
+    /* ─── CONTENT WRAP ─── */
+    .content-wrap { max-width: 1000px; margin: 0 auto; padding: 52px 24px 96px; }
+
+    /* ─── SECTION BLOCK ─── */
+    .sec-block { margin-bottom: 72px; }
+
+    .block-header { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; }
+
+    .block-icon {
+      width: 52px; height: 52px; border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px; flex-shrink: 0; box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    }
+
+    .icon-lime   { background: var(--lime); }
+    .icon-sky    { background: var(--sky-mid); }
+    .icon-orange { background: var(--orange); }
+    .icon-green  { background: var(--green); }
+    .icon-purple { background: #8b5cf6; }
+
+    .block-title { font-family: 'Righteous', cursive; font-size: 26px; color: var(--dark); letter-spacing: 1px; }
+
+    /* ─── CALENDAR ─── */
+    .calendar-card {
+      background: white; border-radius: 22px;
+      overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+      border-top: 5px solid var(--lime);
+    }
+
+    .calendar-card iframe { width: 100%; border: none; display: block; min-height: 520px; }
+
+    .calendar-footer {
+      padding: 12px 20px; text-align: right;
+      font-size: 12px; color: var(--gray);
+      border-top: 1px solid var(--gray-light);
+    }
+
+    .calendar-footer a { color: var(--green); font-weight: 700; text-decoration: none; }
+    .calendar-footer a:hover { text-decoration: underline; }
+
+    /* ─── RENEWAL ─── */
+    .renewal-card {
+      background: white; border-radius: 22px; padding: 40px 44px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07); border-top: 5px solid var(--orange);
+      position: relative; overflow: hidden;
+    }
+
+    .renewal-card::after {
+      content: ''; position: absolute; font-size: 130px; opacity: 0.05;
+      right: -10px; bottom: -20px; pointer-events: none;
+    }
+
+    .alert-banner {
+      display: flex; align-items: flex-start; gap: 12px;
+      background: #fff3e0; border: 2px solid var(--orange);
+      border-radius: 14px; padding: 16px 20px; margin-bottom: 28px;
+      font-size: 14px; font-weight: 700; color: #c2410c; line-height: 1.65;
+    }
+
+    .alert-banner .alert-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+
+    .renewal-body p {
+      font-size: 15px; color: var(--gray); line-height: 2;
+      font-weight: 300; margin-bottom: 14px; position: relative; z-index: 1;
+    }
+
+    .renewal-body p:last-child { margin-bottom: 0; }
+    .renewal-body strong { color: var(--dark); font-weight: 700; }
+
+    .deadline-pill {
+      display: inline-block; background: var(--orange); color: white;
+      font-weight: 700; font-size: 13px; padding: 4px 14px; border-radius: 20px;
+    }
+
+    /* ─── FEE GRID ─── */
+    .fee-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 24px; }
+
+    .fee-card {
+      background: white; border-radius: 20px; padding: 28px 22px;
+      box-shadow: 0 3px 16px rgba(0,0,0,0.07); border-bottom: 4px solid var(--lime);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .fee-card:nth-child(2) { border-bottom-color: var(--sky-mid); }
+    .fee-card:nth-child(3) { border-bottom-color: var(--orange); }
+    .fee-card:hover { transform: translateY(-5px); box-shadow: 0 14px 36px rgba(0,0,0,0.1); }
+
+    .fee-card-icon { font-size: 32px; margin-bottom: 12px; }
+
+    .fee-card-name { font-family: 'Righteous', cursive; font-size: 17px; color: var(--dark); margin-bottom: 16px; letter-spacing: 0.5px; }
+
+    .fee-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 8px 0; border-bottom: 1px solid var(--gray-light); font-size: 13px;
+    }
+
+    .fee-row:last-of-type { border-bottom: none; }
+    .fee-row-label { color: var(--gray); }
+
+    .fee-row-value { font-family: 'Righteous', cursive; font-size: 17px; color: var(--green); }
+
+    .fee-note-mini {
+      font-size: 11px; color: var(--gray); line-height: 1.7;
+      background: var(--offwhite); border-radius: 8px;
+      padding: 10px 12px; margin-top: 12px;
+    }
+
+    /* debit schedule */
+    .debit-box {
+      background: white; border-radius: 18px; padding: 28px 32px;
+      box-shadow: 0 3px 16px rgba(0,0,0,0.07); border-left: 5px solid var(--sky-mid);
+    }
+
+    .debit-title { font-family: 'Righteous', cursive; font-size: 18px; color: var(--dark); margin-bottom: 16px; letter-spacing: 0.5px; }
+
+    .debit-row {
+      display: flex; align-items: flex-start; gap: 10px;
+      padding: 10px 0; border-bottom: 1px solid var(--gray-light); font-size: 14px;
+    }
+
+    .debit-row:last-child { border-bottom: none; }
+    .debit-label { color: var(--gray); min-width: 140px; flex-shrink: 0; font-weight: 500; }
+    .debit-val { color: var(--dark); line-height: 1.6; }
+
+    /* ─── INSURANCE ─── */
+    .ins-table {
+      width: 100%; border-collapse: collapse; border-radius: 18px;
+      overflow: hidden; box-shadow: 0 3px 16px rgba(0,0,0,0.07); margin-bottom: 16px;
+    }
+
+    .ins-table th, .ins-table td {
+      padding: 16px 24px; text-align: left;
+      border-bottom: 1px solid var(--gray-light); font-size: 14px;
+    }
+
+    .ins-table th { background: var(--green); color: white; font-weight: 700; font-size: 13px; letter-spacing: 0.5px; }
+    .ins-table td { background: white; }
+    .ins-table tr:last-child td { border-bottom: none; }
+    .ins-table tr:nth-child(even) td { background: var(--offwhite); }
+
+    .ins-val { font-family: 'Righteous', cursive; font-size: 20px; color: var(--green); }
+
+    .ins-note {
+      font-size: 13px; color: var(--gray); line-height: 1.8;
+      background: white; border-radius: 12px; padding: 16px 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05); border-left: 4px solid var(--sky-mid);
+    }
+
+    /* ─── REPORTS ─── */
+    .report-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+
+    .report-card {
+      background: white; border-radius: 20px; overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .report-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(0,0,0,0.1); }
+
+    .report-img {
+      width: 100%; aspect-ratio: 16/9;
+      background: linear-gradient(135deg, var(--offwhite), var(--gray-light));
+      overflow: hidden; display: flex; align-items: center; justify-content: center;
+      font-size: 52px;
+    }
+
+    .report-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    .report-body { padding: 18px 22px; }
+
+    .report-date {
+      font-size: 11px; font-weight: 700; color: var(--green);
+      letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px;
+    }
+
+    .report-text { font-size: 13px; color: var(--gray); line-height: 1.85; font-weight: 300; }
+
+    /* ─── LINKS ─── */
+    .link-list { display: flex; flex-direction: column; gap: 12px; }
+
+    .link-card {
+      display: flex; align-items: center; gap: 16px;
+      background: white; border-radius: 16px; padding: 18px 22px;
+      text-decoration: none; color: var(--dark);
+      box-shadow: 0 3px 14px rgba(0,0,0,0.06);
+      border: 2px solid transparent;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+
+    .link-card:hover {
+      border-color: var(--lime); transform: translateX(6px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.09);
+    }
+
+    .link-icon {
+      width: 44px; height: 44px; background: var(--lime);
+      border-radius: 12px; display: flex; align-items: center;
+      justify-content: center; font-size: 20px; flex-shrink: 0;
+    }
+
+    .link-text { flex: 1; }
+    .link-name { font-size: 14px; font-weight: 700; margin-bottom: 3px; }
+    .link-url { font-size: 11px; color: var(--gray); font-weight: 300; }
+    .link-arrow { font-size: 18px; color: var(--gray-light); transition: color 0.2s, transform 0.2s; }
+    .link-card:hover .link-arrow { color: var(--green); transform: translateX(4px); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--dark); color: rgba(255,255,255,0.55);
+      padding: 56px 48px 28px; position: relative;
+    }
+
+    footer::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(to right, var(--lime), var(--sky-mid), var(--green));
+    }
+
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+
+    .footer-top {
+      display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 56px;
+      padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 24px;
+    }
+
+    .footer-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+    .footer-logo .logo-ball { width: 40px; height: 40px; font-size: 18px; }
+    .footer-logo .logo-main { font-size: 15px; }
+    .footer-desc { font-size: 13px; line-height: 1.9; font-weight: 300; }
+
+    .footer-col h4 { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--lime); margin-bottom: 18px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+
+    .footer-col a {
+      text-decoration: none; font-size: 13px; color: rgba(255,255,255,0.45);
+      font-weight: 300; transition: color 0.2s; display: flex; align-items: center; gap: 6px;
+    }
+
+    .footer-col a::before { content: '→'; font-size: 10px; color: var(--lime); }
+    .footer-col a:hover { color: white; }
+
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 12px; flex-wrap: wrap; gap: 8px; }
+
+    #pagetop {
+      position: fixed; bottom: 24px; right: 24px; width: 50px; height: 50px;
+      background: var(--lime); color: var(--dark); border-radius: 50%;
+      display: none; align-items: center; justify-content: center;
+      text-decoration: none; font-size: 20px; font-weight: 900;
+      box-shadow: 0 6px 20px rgba(170,221,43,0.45); z-index: 100; transition: transform 0.2s;
+    }
+
+    #pagetop:hover { transform: translateY(-4px); }
+
+    .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      #header { padding: 0 20px; }
+      nav { display: none; }
+      .hamburger { display: flex; }
+      .page-hero { padding: 56px 20px 100px; }
+      .content-wrap { padding: 40px 16px 72px; }
+      .jump-wrap { padding: 40px 16px 0; }
+      .jump-grid { flex-wrap: wrap; gap: 10px; }
+      .fee-grid { grid-template-columns: 1fr; }
+      .report-grid { grid-template-columns: 1fr 1fr; }
+      .renewal-card { padding: 24px 18px; }
+      .footer-top { grid-template-columns: 1fr; gap: 28px; }
+      .footer-bottom { justify-content: center; text-align: center; }
+      footer { padding: 48px 20px 24px; }
+    }
+
+    @media (max-width: 768px) {
+      .logo-sub { display: none; }
+      .ph-emoji { display: none; }
+      .page-hero h1 { font-size: 44px; }
+      .calendar-frame { height: 400px; }
+      .ins-table th, .ins-table td { padding: 12px 14px; font-size: 13px; }
+      .links-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .report-grid { grid-template-columns: 1fr; }
+      .ph-emoji { display: none; }
+      .debit-row { flex-direction: column; gap: 4px; }
+      .debit-label { min-width: auto; }
+      .jump-btn { font-size: 12px; padding: 8px 14px; }
+    }
+
+    @media (max-width: 400px) {
+      .page-hero h1 { font-size: 36px; }
+      .logo-main { font-size: 14px; }
+      .logo-ball { width: 38px; height: 38px; font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="header">
+  <a href="index.html" class="logo">
+    <div class="logo-ball">⚽</div>
+    <div class="logo-texts">
+      <span class="logo-main">安原スポーツクラブ</span>
+      <span class="logo-sub">総合型地域スポーツクラブ・和歌山</span>
+    </div>
+  </a>
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="about.html">クラブ紹介</a>
+    <a href="info.html">活動内容</a>
+    <a href="report.html">活動報告</a>
+    <a href="trial.html">体験・入会</a>
+    <a href="members.html" class="current">会員様向け</a>
+    <a href="contact.html">お問い合わせ</a>
+    <a href="trial.html" class="nav-cta">⚡ 無料体験</a>
+  </nav>
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">✕</button>
+  <a href="index.html">HOME</a>
+  <a href="about.html">クラブ紹介</a>
+  <a href="info.html">活動内容</a>
+  <a href="report.html">活動報告</a>
+  <a href="trial.html">体験・入会</a>
+  <a href="members.html">会員様向け</a>
+  <a href="contact.html">お問い合わせ</a>
+  <a href="trial.html" class="mobile-cta-sp">⚡ 無料体験はこちら</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="ph-deco"></div>
+  <div class="ph-emoji"></div>
+  <p class="page-hero-eyebrow">MEMBERS</p>
+  <h1>会員<span>様向け</span></h1>
+  <p>スケジュール・更新手続き・費用・活動報告などをご確認いただけます</p>
+</div>
+
+<!-- JUMP NAV -->
+<div class="jump-wrap reveal">
+  <div class="jump-nav">
+    <a class="jump-btn" href="#schedule"> スケジュール</a>
+    <a class="jump-btn" href="#renewal"> 更新手続き</a>
+    <a class="jump-btn" href="#fee"> 費用について</a>
+    <a class="jump-btn" href="#insurance">️ 保険について</a>
+    <a class="jump-btn" href="#reports"> 活動報告</a>
+    <a class="jump-btn" href="#links"> リンク集</a>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+  <!-- ① SCHEDULE -->
+  <div class="sec-block" id="schedule">
+    <div class="block-header reveal">
+      <div class="block-icon icon-lime"></div>
+      <h2 class="block-title">スケジュール</h2>
+    </div>
+    <div class="calendar-card reveal">
+      <iframe
+        src="https://calendar.google.com/calendar/embed?src=yasuhara.sports.club%40gmail.com&ctz=Asia%2FTokyo&mode=MONTH&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=0&showCalendars=0&showTz=0&hl=ja"
+        frameborder="0"
+        scrolling="no"
+        title="安原スポーツクラブ スケジュール">
+      </iframe>
+      <div class="calendar-footer">
+        ※表示されない場合は
+        <a href="https://calendar.google.com" target="_blank" rel="noopener">Googleカレンダーで開く →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ② RENEWAL -->
+  <div class="sec-block" id="renewal">
+    <div class="block-header reveal">
+      <div class="block-icon icon-orange"></div>
+      <h2 class="block-title">新年度更新手続きについて</h2>
+    </div>
+    <div class="renewal-card reveal">
+      <div class="alert-banner">
+        <span class="alert-icon">⚠️</span>
+        <span>参加教室が変わらない方も、必ず次年度の参加教室名のご連絡をお願いします</span>
+      </div>
+      <div class="renewal-body">
+        <p>毎年 <strong>2月〜3月</strong> に実施する、参加教室の継続手続きについてご案内します。</p>
+        <p>
+          毎年2月〜3月上旬に運営委員から配布される <strong>「次年度の会員継続確認書」</strong> を記入の上、
+          <span class="deadline-pill">3月26日頃まで</span> に各教室に付き添っている運営委員へご提出ください。
+          もしくは、事務局までFAXにてご提出ください。
+        </p>
+        <p>新年度は <strong>4月1日</strong> 開始となります。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ③ FEE -->
+  <div class="sec-block" id="fee">
+    <div class="block-header reveal">
+      <div class="block-icon icon-green"></div>
+      <h2 class="block-title">活動に必要な費用</h2>
+    </div>
+
+    <div class="fee-grid reveal">
+      <!-- スポーツ保険料 -->
+      <div class="fee-card">
+        <div class="fee-card-icon">️</div>
+        <div class="fee-card-name">スポーツ保険料</div>
+        <div class="fee-row">
+          <span class="fee-row-label">中学生以下</span>
+          <span class="fee-row-value">800円</span>
+        </div>
+        <div class="fee-row">
+          <span class="fee-row-label">高校生〜64歳</span>
+          <span class="fee-row-value">1,850円</span>
+        </div>
+        <div class="fee-row">
+          <span class="fee-row-label">65歳以上</span>
+          <span class="fee-row-value">1,200円</span>
+        </div>
+      </div>
+
+      <!-- 年会費 -->
+      <div class="fee-card">
+        <div class="fee-card-icon"></div>
+        <div class="fee-card-name">年会費</div>
+        <div class="fee-row">
+          <span class="fee-row-label">子ども</span>
+          <span class="fee-row-value">1,000円</span>
+        </div>
+        <div class="fee-row">
+          <span class="fee-row-label">大人</span>
+          <span class="fee-row-value">3,000円</span>
+        </div>
+        <div class="fee-row">
+          <span class="fee-row-label">ファミリー</span>
+          <span class="fee-row-value">5,000円</span>
+        </div>
+        <div class="fee-note-mini">登録のゆうちょ銀行口座から毎年<strong>4月</strong>に引き落とし</div>
+      </div>
+
+      <!-- 教室参加料 -->
+      <div class="fee-card">
+        <div class="fee-card-icon"></div>
+        <div class="fee-card-name">教室参加料</div>
+        <div class="fee-row">
+          <span class="fee-row-label">金額</span>
+          <span class="fee-row-value" style="font-size:13px;font-family:'Noto Sans JP',sans-serif;color:var(--gray);">教室により異なります</span>
+        </div>
+        <div class="fee-note-mini">詳細は<a href="info.html" style="color:var(--green);font-weight:700;">活動内容ページ</a>をご参照ください</div>
+      </div>
+    </div>
+
+    <!-- 引き落とし日程 -->
+    <div class="debit-box reveal">
+      <p class="debit-title"> 引き落とし日程</p>
+      <div class="debit-row">
+        <span class="debit-label">サッカー教室</span>
+        <span class="debit-val">毎月 20日</span>
+      </div>
+      <div class="debit-row">
+        <span class="debit-label">その他の教室</span>
+        <span class="debit-val">4月・7月・10月・1月 各20日（3か月分）</span>
+      </div>
+      <div class="debit-row">
+        <span class="debit-label">年度途中入会の場合</span>
+        <span class="debit-val">入会月または翌月20日に引き落とし</span>
+      </div>
+      <div class="debit-row">
+        <span class="debit-label">引落日が休日の場合</span>
+        <span class="debit-val">翌営業日</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ④ INSURANCE -->
+  <div class="sec-block" id="insurance">
+    <div class="block-header reveal">
+      <div class="block-icon icon-sky">️</div>
+      <h2 class="block-title">保険について</h2>
+    </div>
+    <table class="ins-table reveal">
+      <thead>
+        <tr>
+          <th>補償内容</th>
+          <th>金額</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>通院</td>
+          <td><span class="ins-val">1,500円</span><span style="font-size:12px;color:var(--gray);margin-left:6px;">／日</span></td>
+        </tr>
+        <tr>
+          <td>入院</td>
+          <td><span class="ins-val">4,000円</span><span style="font-size:12px;color:var(--gray);margin-left:6px;">／日</span></td>
+        </tr>
+        <tr>
+          <td>死亡</td>
+          <td><span class="ins-val">2,000万円</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="ins-note reveal">
+      ※ 1日の通院から適用されます。万一けがをされた場合は、<strong style="color:var(--dark);">速やかに事務局までご連絡ください。</strong>
+    </p>
+  </div>
+
+  <!-- ⑤ REPORTS -->
+  <div class="sec-block" id="reports">
+    <div class="block-header reveal">
+      <div class="block-icon icon-lime"></div>
+      <h2 class="block-title">活動報告</h2>
+    </div>
+    <div class="report-grid">
+
+      <div class="report-card reveal">
+        <div class="report-img">
+          <img src="images/activity_02.jpg" alt="サッカー交流戦" onerror="this.style.display='none';this.parentNode.innerHTML='⚽'">
+        </div>
+        <div class="report-body">
+          <p class="report-date">2025年11月26日</p>
+          <p class="report-text">智弁学園小学校のアフタースクールの皆さんとサッカー交流戦を行いました。2回目の交流戦。皆さん楽しいひと時を過ごしました！</p>
+        </div>
+      </div>
+
+      <div class="report-card reveal">
+        <div class="report-img">
+          <img src="images/activity_01.jpg" alt="スポーツ鬼ごっこ交流戦" onerror="this.style.display='none';this.parentNode.innerHTML=''">
+        </div>
+        <div class="report-body">
+          <p class="report-date">2025年3月16日</p>
+          <p class="report-text">滋賀県希望ヶ丘文化公園にてスポーツ鬼ごっこの交流戦に参加しました。学ぶことが多く大変刺激になりました！</p>
+        </div>
+      </div>
+
+      <div class="report-card reveal">
+        <div class="report-img">
+          <img src="images/activity_03.jpg" alt="親子ヨガ" onerror="this.style.display='none';this.parentNode.innerHTML=''">
+        </div>
+        <div class="report-body">
+          <p class="report-date">夏休み企画</p>
+          <p class="report-text">安原スポーツクラブ夏休み企画「親子ヨガ❣️」を開催！お子さまとのスキンシップを楽しみながら、共に達成感と自信につながる素敵な時間となりました。</p>
+        </div>
+      </div>
+
+      <div class="report-card reveal">
+        <div class="report-img">
+          <img src="images/activity_03.jpg" alt="スポーツフェスティバル" onerror="this.style.display='none';this.parentNode.innerHTML=''">
+        </div>
+        <div class="report-body">
+          <p class="report-date">2017年3月18日</p>
+          <p class="report-text">県主催「第1回総合型地域スポーツクラブ スポーツフェスティバル」（県立体育館）にてダンス発表を行いました！</p>
+        </div>
+      </div>
+
+      <div class="report-card reveal">
+        <div class="report-img">
+          <img src="images/activity_03.jpg" alt="ショートテニス" onerror="this.style.display='none';this.parentNode.innerHTML=''">
+        </div>
+        <div class="report-body">
+          <p class="report-date">活動の様子</p>
+          <p class="report-text">ショートテニス教室の様子です。低学年はスポンジボールで、高学年は少し硬めのボールを使ってレッスンしています。</p>
+        </div>
+      </div>
+
+      <div class="report-card reveal">
+        <div class="report-img">
+          <img src="images/activity_03.jpg" alt="高野山 森林セラピー" onerror="this.style.display='none';this.parentNode.innerHTML=''">
+        </div>
+        <div class="report-body">
+          <p class="report-date">ヨガ教室イベント</p>
+          <p class="report-text">ヨガ教室のイベントで高野山にて森林セラピーを開催！大自然の中で心も体もリフレッシュしました。</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ⑥ LINKS -->
+  <div class="sec-block" id="links">
+    <div class="block-header reveal">
+      <div class="block-icon icon-purple"></div>
+      <h2 class="block-title">リンク集</h2>
+    </div>
+    <div class="link-list reveal">
+
+      <a class="link-card" href="https://m.facebook.com/%E3%82%8F%E3%81%8B%E3%82%84%E3%81%BE%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E9%AC%BC%E3%81%94%E3%81%A3%E3%81%93%E3%82%B5%E3%83%BC%E3%82%AF%E3%83%AB-424943247884776/" target="_blank" rel="noopener">
+        <div class="link-icon"></div>
+        <div class="link-text">
+          <div class="link-name">わかやまスポーツ鬼ごっこ愛好会</div>
+          <div class="link-url">Facebook ページ</div>
+        </div>
+        <span class="link-arrow">→</span>
+      </a>
+
+      <a class="link-card" href="http://www.onigokko.or.jp/" target="_blank" rel="noopener">
+        <div class="link-icon"></div>
+        <div class="link-text">
+          <div class="link-name">一般社団法人 鬼ごっこ協会（公式ホームページ）</div>
+          <div class="link-url">onigokko.or.jp</div>
+        </div>
+        <span class="link-arrow">→</span>
+      </a>
+
+      <a class="link-card" href="http://kidslete.ikora.tv/" target="_blank" rel="noopener">
+        <div class="link-icon"></div>
+        <div class="link-text">
+          <div class="link-name">アスレチック教室 ブログ公開中</div>
+          <div class="link-url">kidslete.ikora.tv</div>
+        </div>
+        <span class="link-arrow">→</span>
+      </a>
+
+      <a class="link-card" href="http://onigokkoyasuharasc.ikora.tv/" target="_blank" rel="noopener">
+        <div class="link-icon"></div>
+        <div class="link-text">
+          <div class="link-name">スポーツ鬼ごっこ ブログ公開中</div>
+          <div class="link-url">onigokkoyasuharasc.ikora.tv</div>
+        </div>
+        <span class="link-arrow">→</span>
+      </a>
+
+      <a class="link-card" href="https://www.instagram.com/yasuhara_sports_club/" target="_blank" rel="noopener">
+        <div class="link-icon" style="background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);"></div>
+        <div class="link-text">
+          <div class="link-name">安原スポーツクラブ 公式Instagram</div>
+          <div class="link-url">@yasuhara_sports_club</div>
+        </div>
+        <span class="link-arrow">→</span>
+      </a>
+
+    </div>
+  </div>
+
+</div><!-- /content-wrap -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">
+          <div class="logo-ball">⚽</div>
+          <div class="logo-texts">
+            <span class="logo-main">安原スポーツクラブ</span>
+          </div>
+        </div>
+        <p class="footer-desc">地域の子どもたちの健全な成長と、スポーツを通じた交流を目的に活動しています。</p>
+      </div>
+      <div class="footer-col">
+        <h4>MENU</h4>
+        <ul>
+          <li><a href="about.html">クラブ紹介</a></li>
+          <li><a href="info.html">活動内容</a></li>
+          <li><a href="trial.html">体験・入会</a></li>
+          <li><a href="fee.html">会費のご案内</a></li>
+          <li><a href="rules.html">会則</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>SUPPORT</h4>
+        <ul>
+          <li><a href="members.html">会員様向け</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+          <li><a href="news.html">お知らせ一覧</a></li>
+          <li><a href="report.html">活動報告</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright © 安原スポーツクラブ All Rights Reserved.</p>
+      <p style="font-size:11px">Web Design: Template-Party</p>
+    </div>
+  </div>
+</footer>
+
+<a href="#" id="pagetop">↑</a>
+
+<script>
+  /* HAMBURGER */
+  document.getElementById('hamburger').addEventListener('click', () =>
+    document.getElementById('mobileMenu').classList.add('open'));
+  document.getElementById('mobileClose').addEventListener('click', () =>
+    document.getElementById('mobileMenu').classList.remove('open'));
+
+  /* SCROLL REVEAL */
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(r => io.observe(r));
+
+  /* HEADER + PAGETOP */
+  const header  = document.getElementById('header');
+  const pagetop = document.getElementById('pagetop');
+  window.addEventListener('scroll', () => {
+    header.style.height   = window.scrollY > 60 ? '60px' : '72px';
+    pagetop.style.display = window.scrollY > 350 ? 'flex' : 'none';
+  });
+
+  /* SMOOTH SCROLL for jump nav (offset for fixed header) */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href');
+      if (id === '#') return;
+      const target = document.querySelector(id);
+      if (target) {
+        e.preventDefault();
+        const top = target.getBoundingClientRect().top + window.scrollY - 88;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
