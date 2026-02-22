@@ -2,71 +2,305 @@
    about.css  |  クラブ紹介ページ専用スタイル
    ========================================================= */
 
-.content-wrap { max-width: 900px; margin: 0 auto; padding: 0 24px 96px; }
+.content-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px 96px;
+}
 
 /* ─── PROFILE BLOCK ─── */
-.profile-block { padding-top: 72px; }
+.profile-block {
+  padding-top: 72px;
+}
 
 .profile-card {
-  background: white; border-radius: 24px; padding: 40px 44px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.07); border-left: 5px solid var(--lime);
-  margin-bottom: 48px; position: relative; overflow: hidden;
+  background: white;
+  border-radius: 24px;
+  padding: 40px 44px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+  border-left: 5px solid var(--lime);
+  margin-bottom: 48px;
+  position: relative;
+  overflow: hidden;
 }
 .profile-card::before {
-  content: '2009'; position: absolute; right: -10px; top: -20px;
-  font-family: 'Righteous', cursive; font-size: 120px; color: var(--lime);
-  opacity: 0.07; line-height: 1; pointer-events: none;
+  content: "2009";
+  position: absolute;
+  right: -10px;
+  top: -20px;
+  font-family: "Righteous", cursive;
+  font-size: 120px;
+  color: var(--lime);
+  opacity: 0.07;
+  line-height: 1;
+  pointer-events: none;
 }
-.profile-card p { font-size: 16px; line-height: 2; color: var(--gray); font-weight: 300; position: relative; z-index: 1; }
-.profile-card strong { color: var(--green-dark); font-weight: 700; }
+.profile-card p {
+  font-size: 16px;
+  line-height: 2;
+  color: var(--gray);
+  font-weight: 300;
+  position: relative;
+  z-index: 1;
+}
+.profile-card strong {
+  color: var(--green-dark);
+  font-weight: 700;
+}
 
 /* ─── ORG TABLE ─── */
-.org-block { margin-bottom: 64px; }
-.block-header { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
-.block-icon { width: 48px; height: 48px; background: var(--lime); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(170,221,43,0.3); }
-.block-title { font-family: 'Righteous', cursive; font-size: 24px; color: var(--dark); letter-spacing: 1px; }
+.org-block {
+  margin-bottom: 64px;
+}
+.block-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+.block-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--lime);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(170, 221, 43, 0.3);
+}
+.block-title {
+  font-family: "Righteous", cursive;
+  font-size: 24px;
+  color: var(--dark);
+  letter-spacing: 1px;
+}
 
-.org-table { width: 100%; border-collapse: collapse; border-radius: 18px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.07); }
-.org-table tr { transition: background 0.2s; }
-.org-table tr:hover td { background: var(--offwhite); }
-.org-table th, .org-table td { padding: 16px 22px; text-align: left; border-bottom: 1px solid var(--gray-light); font-size: 14px; line-height: 1.75; }
-.org-table th { background: var(--green); color: white; font-weight: 700; font-size: 13px; letter-spacing: 0.5px; width: 28%; vertical-align: top; }
-.org-table td { background: white; color: var(--dark); font-weight: 400; }
-.org-table tr:last-child th, .org-table tr:last-child td { border-bottom: none; }
+.org-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+}
+.org-table tr {
+  transition: background 0.2s;
+}
+.org-table tr:hover td {
+  background: var(--offwhite);
+}
+.org-table th,
+.org-table td {
+  padding: 16px 22px;
+  text-align: left;
+  border-bottom: 1px solid var(--gray-light);
+  font-size: 14px;
+  line-height: 1.75;
+}
+.org-table th {
+  background: var(--green);
+  color: white;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  width: 28%;
+  vertical-align: top;
+}
+.org-table td {
+  background: white;
+  color: var(--dark);
+  font-weight: 400;
+}
+.org-table tr:last-child th,
+.org-table tr:last-child td {
+  border-bottom: none;
+}
 
-.tel-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--offwhite); border: 1px solid var(--gray-light); border-radius: 8px; padding: 4px 12px; font-size: 13px; margin-top: 6px; color: var(--gray); }
+.tel-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--offwhite);
+  border: 1px solid var(--gray-light);
+  border-radius: 8px;
+  padding: 4px 12px;
+  font-size: 13px;
+  margin-top: 6px;
+  color: var(--gray);
+}
+/* ─── MSTERIALS ─── */
+
+.material-symbols-rounded {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.block-icon .material-symbols-rounded {
+  font-size: 26px;
+  color: var(--dark);
+}
+
+.award-label-icon .material-symbols-rounded {
+  font-size: 18px;
+  color: white;
+}
+
 
 /* ─── AWARDS ─── */
-.awards-block { margin-bottom: 64px; }
-.award-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 8px; }
-.award-card { background: white; border-radius: 22px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.07); transition: transform 0.25s, box-shadow 0.25s; border-bottom: 4px solid var(--lime); }
-.award-card:nth-child(2) { border-bottom-color: var(--sky); }
-.award-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,0.11); }
-.award-img-wrap { width: 100%; aspect-ratio: 4/3; background: linear-gradient(135deg, var(--offwhite), var(--gray-light)); display: flex; align-items: center; justify-content: center; font-size: 64px; overflow: hidden; }
-.award-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.award-label { padding: 18px 22px; display: flex; align-items: center; gap: 10px; }
-.award-label-icon { width: 36px; height: 36px; background: var(--lime); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
-.award-card:nth-child(2) .award-label-icon { background: var(--sky); }
-.award-label-text { font-family: 'Righteous', cursive; font-size: 16px; color: var(--dark); letter-spacing: 0.5px; }
+.awards-block {
+  margin-bottom: 64px;
+}
+.award-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 8px;
+}
+.award-card {
+  background: white;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s;
+  border-bottom: 4px solid var(--lime);
+}
+.award-card:nth-child(2) {
+  border-bottom-color: var(--sky);
+}
+.award-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.11);
+}
+/* ─── AWARD COLOR SYSTEM ─── */
+.award-card.color-sky {
+  --award-color: var(--sky);
+}
+.award-card.color-lime {
+  --award-color: var(--lime);
+}
+.award-img-wrap {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: linear-gradient(135deg, var(--offwhite), var(--gray-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 64px;
+  overflow: hidden;
+}
+.award-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.award-label {
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.award-label-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--award-color);
+  color: #000; /* 黒アイコン */
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
 
+.award-label-text {
+  font-family: "Righteous", cursive;
+  font-size: 16px;
+  color: var(--dark);
+  letter-spacing: 0.5px;
+}
+.award-label-icon .material-symbols-rounded {
+  font-size: 18px;
+  color: black;
+}
 /* ─── CTA STRIP ─── */
-.cta-strip { background: linear-gradient(135deg, var(--green-dark), var(--green)); border-radius: 24px; padding: 44px 48px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; position: relative; overflow: hidden; }
-.cta-strip::before { content: '⚽'; position: absolute; font-size: 120px; opacity: 0.07; right: 20px; top: 50%; transform: translateY(-50%) rotate(20deg); }
-.cta-strip-text h3 { font-family: 'Righteous', cursive; font-size: 26px; color: white; letter-spacing: 1px; margin-bottom: 8px; }
-.cta-strip-text p { font-size: 14px; color: rgba(255,255,255,0.72); font-weight: 300; line-height: 1.7; }
+.cta-strip {
+  background: linear-gradient(135deg, var(--green-dark), var(--green));
+  border-radius: 24px;
+  padding: 44px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+}
+.cta-strip::before {
+  content: "⚽";
+  position: absolute;
+  font-size: 120px;
+  opacity: 0.07;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%) rotate(20deg);
+}
+.cta-strip-text h3 {
+  font-family: "Righteous", cursive;
+  font-size: 26px;
+  color: white;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+.cta-strip-text p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.72);
+  font-weight: 300;
+  line-height: 1.7;
+}
 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 900px) {
-  .content-wrap { padding: 0 16px 72px; }
-  .profile-card { padding: 28px 20px; }
-  .cta-strip { padding: 28px 20px; flex-direction: column; align-items: flex-start; }
+  .content-wrap {
+    padding: 0 16px 72px;
+  }
+  .profile-card {
+    padding: 28px 20px;
+  }
+  .cta-strip {
+    padding: 28px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 @media (max-width: 600px) {
-  .award-grid { grid-template-columns: 1fr; }
-  .org-table th, .org-table td { padding: 12px 14px; font-size: 13px; }
-  .org-table th { width: 100%; display: block; border-bottom: none; padding-bottom: 4px; }
-  .org-table td { display: block; width: 100%; }
-  .org-table tr { display: block; margin-bottom: 4px; }
-  .profile-card { padding: 22px 16px; }
+  .award-grid {
+    grid-template-columns: 1fr;
+  }
+  .org-table th,
+  .org-table td {
+    padding: 12px 14px;
+    font-size: 13px;
+  }
+  .org-table th {
+    width: 100%;
+    display: block;
+    border-bottom: none;
+    padding-bottom: 4px;
+  }
+  .org-table td {
+    display: block;
+    width: 100%;
+  }
+  .org-table tr {
+    display: block;
+    margin-bottom: 4px;
+  }
+  .profile-card {
+    padding: 22px 16px;
+  }
 }

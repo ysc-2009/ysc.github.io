@@ -1,0 +1,109 @@
+/* =========================================================
+   RULES PAGE DESIGN
+========================================================= */
+
+.rules-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 60px 20px 100px;
+}
+
+.rules-hero {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.rules-eyebrow {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.rules-hero h2 {
+  font-family: "Righteous", cursive;
+  font-size: 34px;
+  margin-bottom: 14px;
+}
+
+.rules-hero span {
+  color: #0f8c45;
+}
+
+.rules-lead {
+  font-size: 14px;
+  color: #666;
+}
+
+.rules-card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 40px;
+  margin-bottom: 40px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.06);
+}
+
+.rules-card h3 {
+  font-family: "Righteous", cursive;
+  margin-bottom: 24px;
+  font-size: 22px;
+  border-left: 5px solid #9adf3f;
+  padding-left: 12px;
+}
+
+.rule-block {
+  margin-bottom: 24px;
+}
+
+.rule-block h4 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #0f8c45;
+}
+
+.rule-block p,
+.rule-block li {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #555;
+}
+
+.rule-block ul {
+  padding-left: 18px;
+}
+
+.fee-card {
+  border-top: 6px solid #ffa726;
+}
+
+.fee-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.fee-item {
+  background: #f7f9f8;
+  border-radius: 14px;
+  padding: 20px;
+  text-align: center;
+}
+
+.fee-item span {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: #666;
+}
+
+.fee-item strong {
+  font-size: 20px;
+  color: #0f8c45;
+}
+
+.fee-note {
+  font-size: 13px;
+  color: #777;
+}
