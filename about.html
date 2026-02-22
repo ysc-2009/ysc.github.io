@@ -1,205 +1,245 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700;900&family=Righteous&display=swap" rel="stylesheet">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>クラブ紹介｜安原スポーツクラブ</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/common.css">
-  <link rel="stylesheet" href="css/about.css">
-  <script defer src="js/common.js"></script>
-</head>
-<body>
-
-<!-- HEADER -->
-<header id="header">
-  <a href="index.html" class="logo">
-    <div class="logo-ball">⚽</div>
-    <div class="logo-texts">
-      <span class="logo-main">安原スポーツクラブ</span>
-      <span class="logo-sub">総合型地域スポーツクラブ・和歌山</span>
-    </div>
-  </a>
-  <nav>
-    <a href="index.html">HOME</a>
-    <a href="about.html" class="current">クラブ紹介</a>
-    <a href="info.html">活動内容</a>
-    <a href="report.html">活動報告</a>
-    <a href="trial.html">体験・入会</a>
-    <a href="members.html">会員様向け</a>
-    <a href="contact.html">お問い合わせ</a>
-    <a href="trial.html" class="nav-cta">⚡ 無料体験</a>
-  </nav>
-  <div class="hamburger" id="hamburger">
-    <span></span><span></span><span></span>
-  </div>
-</header>
-
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-close" id="mobileClose">✕</button>
-  <a href="index.html">HOME</a>
-  <a href="about.html">クラブ紹介</a>
-  <a href="info.html">活動内容</a>
-  <a href="report.html">活動報告</a>
-  <a href="trial.html">体験・入会</a>
-  <a href="members.html">会員様向け</a>
-  <a href="contact.html">お問い合わせ</a>
-  <a href="trial.html" class="mobile-cta-sp">⚡ 無料体験はこちら</a>
-</div>
-
-<!-- PAGE HERO -->
-<div class="page-hero">
-  <div class="ph-deco"></div>
-  <div class="ph-emoji"></div>
-  <p class="page-hero-eyebrow">ABOUT</p>
-  <h1>クラブ<span>紹介</span></h1>
-  <p>安原スポーツクラブについて</p>
-</div>
-
-<!-- MAIN CONTENT -->
-<div class="content-wrap">
-
-  <!-- PROFILE -->
-  <div class="profile-block reveal">
-    <span class="sec-label">PROFILE</span>
-    <h2 class="sec-title">プロフィール</h2>
-    <div class="profile-card">
-      <p>
-        安原スポーツクラブは、<strong>2009年にTOTOの援助を受け、設立</strong>いたしました。<br>
-        地域の子どもたちの健全な成長とスポーツを通じた交流を目的に、
-        和歌山市安原地区を中心に多彩なスポーツ教室を展開しています。
-        青少年の健全育成・健康づくり・地域コミュニティの活性化を
-        3つの柱として、日々活動しています。
-      </p>
-    </div>
-  </div>
-
-  <!-- ORG -->
-  <div class="org-block reveal">
-    <div class="block-header">
-      <div class="block-icon"></div>
-      <h3 class="block-title">組織・役員</h3>
-    </div>
-    <table class="org-table">
-      <tbody>
-        <tr>
-          <th>会長</th>
-          <td>橋本　徳夫</td>
-        </tr>
-        <tr>
-          <th>副会長</th>
-          <td>寺下俊人・沖　賢蔵</td>
-        </tr>
-        <tr>
-          <th>顧問</th>
-          <td>吉本昌純・川端康史・山田好雄</td>
-        </tr>
-        <tr>
-          <th>運営委員</th>
-          <td>城野　淑・宮廻英利美・中谷千晶・前　晴夫・馬場利幸</td>
-        </tr>
-        <tr>
-          <th>監事</th>
-          <td>宮崎一良・西山恵子</td>
-        </tr>
-        <tr>
-          <th>事務局</th>
-          <td>
-            馬場秀典　馬場正人
-            <br>
-            <span class="tel-badge"> 000-000-0000（18時〜21時）</span>
-            <span class="tel-badge" style="margin-left:6px;"> FAX 000-000-000</span>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- AWARDS -->
-  <div class="awards-block reveal">
-    <div class="block-header">
-      <div class="block-icon"></div>
-      <h3 class="block-title">表彰・認定</h3>
-    </div>
-    <div class="award-grid">
-      <div class="award-card">
-        <div class="award-img-wrap">
-          <img src="images/award1.jpg" alt="表彰状" onerror="this.style.display='none';this.parentNode.innerHTML=''">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700;900&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>クラブ紹介｜安原スポーツクラブ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Oswald:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/about.css" />
+    <script defer src="js/common.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header id="header">
+      <a href="index.html" class="logo">
+        <div class="logo-ball">⚽</div>
+        <div class="logo-texts">
+          <span class="logo-main">安原スポーツクラブ</span>
+          <span class="logo-sub">総合型地域スポーツクラブ・和歌山</span>
         </div>
-        <div class="award-label">
-          <div class="award-label-icon"></div>
-          <span class="award-label-text">表彰状</span>
+      </a>
+      <nav>
+        <a href="index.html">HOME</a>
+        <a href="about.html" class="current">クラブ紹介</a>
+        <a href="info.html">活動内容</a>
+        <a href="report.html">活動報告</a>
+        <a href="trial.html">体験・入会</a>
+        <a href="members.html">会員様向け</a>
+        <a href="contact.html">お問い合わせ</a>
+        <a href="trial.html" class="nav-cta">⚡ 無料体験</a>
+      </nav>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+      <button class="mobile-close" id="mobileClose">✕</button>
+      <a href="index.html">HOME</a>
+      <a href="about.html">クラブ紹介</a>
+      <a href="info.html">活動内容</a>
+      <a href="report.html">活動報告</a>
+      <a href="trial.html">体験・入会</a>
+      <a href="members.html">会員様向け</a>
+      <a href="contact.html">お問い合わせ</a>
+      <a href="trial.html" class="mobile-cta-sp">⚡ 無料体験はこちら</a>
+    </div>
+
+    <!-- PAGE HERO -->
+    <div class="page-hero">
+      <div class="ph-deco"></div>
+      <div class="ph-emoji"></div>
+      <p class="page-hero-eyebrow">ABOUT</p>
+      <h1>クラブ<span>紹介</span></h1>
+      <p>安原スポーツクラブについて</p>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="content-wrap">
+      <!-- PROFILE -->
+      <div class="profile-block reveal">
+        <span class="sec-label">PROFILE</span>
+        <h2 class="sec-title">プロフィール</h2>
+        <div class="profile-card">
+          <p>
+            安原スポーツクラブは、<strong>2009年にTOTOの援助を受け、設立</strong>いたしました。<br />
+            地域の子どもたちの健全な成長とスポーツを通じた交流を目的に、
+            和歌山市安原地区を中心に多彩なスポーツ教室を展開しています。
+            青少年の健全育成・健康づくり・地域コミュニティの活性化を
+            3つの柱として、日々活動しています。
+          </p>
         </div>
       </div>
-      <div class="award-card">
-        <div class="award-img-wrap">
-          <img src="images/award2.jpg" alt="スポーツ鬼ごっこ認定証" onerror="this.style.display='none';this.parentNode.innerHTML=''">
+
+      <!-- ORG -->
+      <div class="org-block reveal">
+        <div class="block-header">
+          <div class="block-icon">
+            <span class="material-symbols-rounded">groups</span>
+          </div>
+          <h3 class="block-title">組織・役員</h3>
         </div>
-        <div class="award-label">
-          <div class="award-label-icon" style="background:var(--sky-mid);"></div>
-          <span class="award-label-text">スポーツ鬼ごっこ認定証</span>
-        </div>
+        <table class="org-table">
+          <tbody>
+            <tr>
+              <th>会長</th>
+              <td>橋本　徳夫</td>
+            </tr>
+            <tr>
+              <th>副会長</th>
+              <td>寺下俊人・沖　賢蔵</td>
+            </tr>
+            <tr>
+              <th>顧問</th>
+              <td>吉本昌純・川端康史・山田好雄</td>
+            </tr>
+            <tr>
+              <th>運営委員</th>
+              <td>城野　淑・宮廻英利美・中谷千晶・前　晴夫・馬場利幸</td>
+            </tr>
+            <tr>
+              <th>監事</th>
+              <td>宮崎一良・西山恵子</td>
+            </tr>
+            <tr>
+              <th>事務局</th>
+              <td>
+                馬場秀典　馬場正人
+                <br />
+                <span class="tel-badge"> 000-000-0000（18時〜21時）</span>
+                <span class="tel-badge" style="margin-left: 6px">
+                  FAX 000-000-000</span
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-    </div>
-  </div>
 
-  <!-- CTA STRIP -->
-  <div class="cta-strip reveal">
-    <div class="cta-strip-text">
-      <h3> 無料体験、随時受付中！</h3>
-      <p>「どんな雰囲気か知りたい」という方も大歓迎。<br>保護者の見学ももちろんOKです。</p>
-    </div>
-    <a href="trial.html" class="btn-lime">体験・入会はこちら →</a>
-  </div>
+      <!-- AWARDS -->
+      <div class="awards-block reveal">
+        <div class="block-header">
+          <div class="block-icon">
+            <span class="material-symbols-rounded">workspace_premium</span>
+          </div>
+          <h3 class="block-title">表彰・認定</h3>
+        </div>
+        <div class="award-grid">
+          <div class="award-card color-lime">
+            <div class="award-img-wrap">
+              <img
+                src="images/award1.jpg"
+                alt="表彰状"
+                onerror="
+                  this.style.display = 'none';
+                  this.parentNode.innerHTML = '';
+                "
+              />
+            </div>
+            <div class="award-label">
+              <div class="award-label-icon">
+                <span class="material-symbols-rounded">emoji_events</span>
+              </div>
+              <span class="award-label-text">表彰状</span>
+            </div>
+          </div>
+            <div class="award-card color-sky">
+              <div class="award-img-wrap">
+                <img
+                  src="images/award2.jpg"
+                  alt="スポーツ鬼ごっこ認定証"
+                  onerror="
+                    this.style.display = 'none';
+                    this.parentNode.innerHTML = '';
+                  "
+                />
+              </div>
 
-</div><!-- /content-wrap -->
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div>
-        <div class="footer-logo">
-          <div class="logo-ball">⚽</div>
-          <div class="logo-texts">
-            <span class="logo-main">安原スポーツクラブ</span>
+              <div class="award-label">
+                <div class="award-label-icon">
+                  <span class="material-symbols-rounded">verified</span>
+                </div>
+                <span class="award-label-text">スポーツ鬼ごっこ認定証</span>
+              </div>
+            </div>
           </div>
         </div>
-        <p class="footer-desc">地域の子どもたちの健全な成長と、スポーツを通じた交流を目的に活動しています。</p>
       </div>
-      <div class="footer-col">
-        <h4>MENU</h4>
-        <ul>
-          <li><a href="about.html">クラブ紹介</a></li>
-          <li><a href="info.html">活動内容</a></li>
-          <li><a href="trial.html">体験・入会</a></li>
-          <li><a href="fee.html">会費のご案内</a></li>
-          <li><a href="rules.html">会則</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>SUPPORT</h4>
-        <ul>
-          <li><a href="members.html">会員様向け</a></li>
-          <li><a href="contact.html">お問い合わせ</a></li>
-          <li><a href="news.html">お知らせ一覧</a></li>
-          <li><a href="report.html">活動報告</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>Copyright © 安原スポーツクラブ All Rights Reserved.</p>
-      <p style="font-size:11px">Web Design: Template-Party</p>
-    </div>
-  </div>
-</footer>
 
-<a href="#" id="pagetop">↑</a>
-</body>
+      <!-- CTA STRIP -->
+       <div class="content-wrap">
+      <div class="cta-strip reveal">
+        <div class="cta-strip-text">
+          <h3>無料体験、随時受付中！</h3>
+          <p>
+            「どんな雰囲気か知りたい」という方も大歓迎。<br />保護者の見学ももちろんOKです。
+          </p>
+        </div>
+        <a href="trial.html" class="btn-lime">体験・入会はこちら →</a>
+      </div>
+      </div>
+    </div>
+    <!-- /content-wrap -->
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div>
+            <div class="footer-logo">
+              <div class="logo-ball">⚽</div>
+              <div class="logo-texts">
+                <span class="logo-main">安原スポーツクラブ</span>
+              </div>
+            </div>
+            <p class="footer-desc">
+              地域の子どもたちの健全な成長と、スポーツを通じた交流を目的に活動しています。
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>MENU</h4>
+            <ul>
+              <li><a href="about.html">クラブ紹介</a></li>
+              <li><a href="info.html">活動内容</a></li>
+              <li><a href="trial.html">体験・入会</a></li>
+              <li><a href="fee.html">会費のご案内</a></li>
+              <li><a href="rules.html">会則</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>SUPPORT</h4>
+            <ul>
+              <li><a href="members.html">会員様向け</a></li>
+              <li><a href="contact.html">お問い合わせ</a></li>
+              <li><a href="news.html">お知らせ一覧</a></li>
+              <li><a href="report.html">活動報告</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>Copyright © 安原スポーツクラブ All Rights Reserved.</p>
+          <p style="font-size: 11px">Web Design: Template-Party</p>
+        </div>
+      </div>
+    </footer>
+
+    <a href="#" id="pagetop">↑</a>
+  </body>
 </html>

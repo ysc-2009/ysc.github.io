@@ -1,404 +1,477 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700;900&family=Righteous&display=swap" rel="stylesheet">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>会員様向け｜安原スポーツクラブ</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/common.css">
-  <link rel="stylesheet" href="css/members.css">
-  <script defer src="js/common.js"></script>
-</head>
-<body>
-
-<!-- HEADER -->
-<header id="header">
-  <a href="index.html" class="logo">
-    <div class="logo-ball">⚽</div>
-    <div class="logo-texts">
-      <span class="logo-main">安原スポーツクラブ</span>
-      <span class="logo-sub">総合型地域スポーツクラブ・和歌山</span>
-    </div>
-  </a>
-  <nav>
-    <a href="index.html">HOME</a>
-    <a href="about.html">クラブ紹介</a>
-    <a href="info.html">活動内容</a>
-    <a href="report.html">活動報告</a>
-    <a href="trial.html">体験・入会</a>
-    <a href="members.html" class="current">会員様向け</a>
-    <a href="contact.html">お問い合わせ</a>
-    <a href="trial.html" class="nav-cta">⚡ 無料体験</a>
-  </nav>
-  <div class="hamburger" id="hamburger">
-    <span></span><span></span><span></span>
-  </div>
-</header>
-
-<div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-close" id="mobileClose">✕</button>
-  <a href="index.html">HOME</a>
-  <a href="about.html">クラブ紹介</a>
-  <a href="info.html">活動内容</a>
-  <a href="report.html">活動報告</a>
-  <a href="trial.html">体験・入会</a>
-  <a href="members.html">会員様向け</a>
-  <a href="contact.html">お問い合わせ</a>
-  <a href="trial.html" class="mobile-cta-sp">⚡ 無料体験はこちら</a>
-</div>
-
-<!-- PAGE HERO -->
-<div class="page-hero">
-  <div class="ph-deco"></div>
-  <div class="ph-emoji"></div>
-  <p class="page-hero-eyebrow">MEMBERS</p>
-  <h1>会員<span>様向け</span></h1>
-  <p>スケジュール・更新手続き・費用・活動報告などをご確認いただけます</p>
-</div>
-
-<!-- JUMP NAV -->
-<div class="jump-wrap reveal">
-  <div class="jump-nav">
-    <a class="jump-btn" href="#schedule"> スケジュール</a>
-    <a class="jump-btn" href="#renewal"> 更新手続き</a>
-    <a class="jump-btn" href="#fee"> 費用について</a>
-    <a class="jump-btn" href="#insurance">️ 保険について</a>
-    <a class="jump-btn" href="#reports"> 活動報告</a>
-    <a class="jump-btn" href="#links"> リンク集</a>
-  </div>
-</div>
-
-<div class="content-wrap">
-
-  <!-- ① SCHEDULE -->
-  <div class="sec-block" id="schedule">
-    <div class="block-header reveal">
-      <div class="block-icon icon-lime"></div>
-      <h2 class="block-title">スケジュール</h2>
-    </div>
-    <div class="calendar-card reveal">
-      <iframe
-        src="https://calendar.google.com/calendar/embed?src=yasuhara.sports.club%40gmail.com&ctz=Asia%2FTokyo&mode=MONTH&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=0&showCalendars=0&showTz=0&hl=ja"
-        frameborder="0"
-        scrolling="no"
-        title="安原スポーツクラブ スケジュール">
-      </iframe>
-      <div class="calendar-footer">
-        ※表示されない場合は
-        <a href="https://calendar.google.com" target="_blank" rel="noopener">Googleカレンダーで開く →</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- ② RENEWAL -->
-  <div class="sec-block" id="renewal">
-    <div class="block-header reveal">
-      <div class="block-icon icon-orange"></div>
-      <h2 class="block-title">新年度更新手続きについて</h2>
-    </div>
-    <div class="renewal-card reveal">
-      <div class="alert-banner">
-        <span class="alert-icon">⚠️</span>
-        <span>参加教室が変わらない方も、必ず次年度の参加教室名のご連絡をお願いします</span>
-      </div>
-      <div class="renewal-body">
-        <p>毎年 <strong>2月〜3月</strong> に実施する、参加教室の継続手続きについてご案内します。</p>
-        <p>
-          毎年2月〜3月上旬に運営委員から配布される <strong>「次年度の会員継続確認書」</strong> を記入の上、
-          <span class="deadline-pill">3月26日頃まで</span> に各教室に付き添っている運営委員へご提出ください。
-          もしくは、事務局までFAXにてご提出ください。
-        </p>
-        <p>新年度は <strong>4月1日</strong> 開始となります。</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- ③ FEE -->
-  <div class="sec-block" id="fee">
-    <div class="block-header reveal">
-      <div class="block-icon icon-green"></div>
-      <h2 class="block-title">活動に必要な費用</h2>
-    </div>
-
-    <div class="fee-grid reveal">
-      <!-- スポーツ保険料 -->
-      <div class="fee-card">
-        <div class="fee-card-icon">️</div>
-        <div class="fee-card-name">スポーツ保険料</div>
-        <div class="fee-row">
-          <span class="fee-row-label">中学生以下</span>
-          <span class="fee-row-value">800円</span>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700;900&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>会員様向け｜安原スポーツクラブ</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/members.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Icons+Round"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <script defer src="js/common.js"></script>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header id="header">
+      <a href="index.html" class="logo">
+        <div class="logo-ball">⚽</div>
+        <div class="logo-texts">
+          <span class="logo-main">安原スポーツクラブ</span>
+          <span class="logo-sub">総合型地域スポーツクラブ・和歌山</span>
         </div>
-        <div class="fee-row">
-          <span class="fee-row-label">高校生〜64歳</span>
-          <span class="fee-row-value">1,850円</span>
-        </div>
-        <div class="fee-row">
-          <span class="fee-row-label">65歳以上</span>
-          <span class="fee-row-value">1,200円</span>
-        </div>
-      </div>
-
-      <!-- 年会費 -->
-      <div class="fee-card">
-        <div class="fee-card-icon"></div>
-        <div class="fee-card-name">年会費</div>
-        <div class="fee-row">
-          <span class="fee-row-label">子ども</span>
-          <span class="fee-row-value">1,000円</span>
-        </div>
-        <div class="fee-row">
-          <span class="fee-row-label">大人</span>
-          <span class="fee-row-value">3,000円</span>
-        </div>
-        <div class="fee-row">
-          <span class="fee-row-label">ファミリー</span>
-          <span class="fee-row-value">5,000円</span>
-        </div>
-        <div class="fee-note-mini">登録のゆうちょ銀行口座から毎年<strong>4月</strong>に引き落とし</div>
-      </div>
-
-      <!-- 教室参加料 -->
-      <div class="fee-card">
-        <div class="fee-card-icon"></div>
-        <div class="fee-card-name">教室参加料</div>
-        <div class="fee-row">
-          <span class="fee-row-label">金額</span>
-          <span class="fee-row-value" style="font-size:13px;font-family:'Noto Sans JP',sans-serif;color:var(--gray);">教室により異なります</span>
-        </div>
-        <div class="fee-note-mini">詳細は<a href="info.html" style="color:var(--green);font-weight:700;">活動内容ページ</a>をご参照ください</div>
-      </div>
-    </div>
-
-    <!-- 引き落とし日程 -->
-    <div class="debit-box reveal">
-      <p class="debit-title"> 引き落とし日程</p>
-      <div class="debit-row">
-        <span class="debit-label">サッカー教室</span>
-        <span class="debit-val">毎月 20日</span>
-      </div>
-      <div class="debit-row">
-        <span class="debit-label">その他の教室</span>
-        <span class="debit-val">4月・7月・10月・1月 各20日（3か月分）</span>
-      </div>
-      <div class="debit-row">
-        <span class="debit-label">年度途中入会の場合</span>
-        <span class="debit-val">入会月または翌月20日に引き落とし</span>
-      </div>
-      <div class="debit-row">
-        <span class="debit-label">引落日が休日の場合</span>
-        <span class="debit-val">翌営業日</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- ④ INSURANCE -->
-  <div class="sec-block" id="insurance">
-    <div class="block-header reveal">
-      <div class="block-icon icon-sky">️</div>
-      <h2 class="block-title">保険について</h2>
-    </div>
-    <table class="ins-table reveal">
-      <thead>
-        <tr>
-          <th>補償内容</th>
-          <th>金額</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>通院</td>
-          <td><span class="ins-val">1,500円</span><span style="font-size:12px;color:var(--gray);margin-left:6px;">／日</span></td>
-        </tr>
-        <tr>
-          <td>入院</td>
-          <td><span class="ins-val">4,000円</span><span style="font-size:12px;color:var(--gray);margin-left:6px;">／日</span></td>
-        </tr>
-        <tr>
-          <td>死亡</td>
-          <td><span class="ins-val">2,000万円</span></td>
-        </tr>
-      </tbody>
-    </table>
-    <p class="ins-note reveal">
-      ※ 1日の通院から適用されます。万一けがをされた場合は、<strong style="color:var(--dark);">速やかに事務局までご連絡ください。</strong>
-    </p>
-  </div>
-
-  <!-- ⑤ REPORTS -->
-  <div class="sec-block" id="reports">
-    <div class="block-header reveal">
-      <div class="block-icon icon-lime"></div>
-      <h2 class="block-title">活動報告</h2>
-    </div>
-    <div class="report-grid">
-
-      <div class="report-card reveal">
-        <div class="report-img">
-          <img src="images/activity_02.jpg" alt="サッカー交流戦" onerror="this.style.display='none';this.parentNode.innerHTML='⚽'">
-        </div>
-        <div class="report-body">
-          <p class="report-date">2025年11月26日</p>
-          <p class="report-text">智弁学園小学校のアフタースクールの皆さんとサッカー交流戦を行いました。2回目の交流戦。皆さん楽しいひと時を過ごしました！</p>
-        </div>
-      </div>
-
-      <div class="report-card reveal">
-        <div class="report-img">
-          <img src="images/activity_01.jpg" alt="スポーツ鬼ごっこ交流戦" onerror="this.style.display='none';this.parentNode.innerHTML=''">
-        </div>
-        <div class="report-body">
-          <p class="report-date">2025年3月16日</p>
-          <p class="report-text">滋賀県希望ヶ丘文化公園にてスポーツ鬼ごっこの交流戦に参加しました。学ぶことが多く大変刺激になりました！</p>
-        </div>
-      </div>
-
-      <div class="report-card reveal">
-        <div class="report-img">
-          <img src="images/activity_03.jpg" alt="親子ヨガ" onerror="this.style.display='none';this.parentNode.innerHTML=''">
-        </div>
-        <div class="report-body">
-          <p class="report-date">夏休み企画</p>
-          <p class="report-text">安原スポーツクラブ夏休み企画「親子ヨガ❣️」を開催！お子さまとのスキンシップを楽しみながら、共に達成感と自信につながる素敵な時間となりました。</p>
-        </div>
-      </div>
-
-      <div class="report-card reveal">
-        <div class="report-img">
-          <img src="images/activity_03.jpg" alt="スポーツフェスティバル" onerror="this.style.display='none';this.parentNode.innerHTML=''">
-        </div>
-        <div class="report-body">
-          <p class="report-date">2017年3月18日</p>
-          <p class="report-text">県主催「第1回総合型地域スポーツクラブ スポーツフェスティバル」（県立体育館）にてダンス発表を行いました！</p>
-        </div>
-      </div>
-
-      <div class="report-card reveal">
-        <div class="report-img">
-          <img src="images/activity_03.jpg" alt="ショートテニス" onerror="this.style.display='none';this.parentNode.innerHTML=''">
-        </div>
-        <div class="report-body">
-          <p class="report-date">活動の様子</p>
-          <p class="report-text">ショートテニス教室の様子です。低学年はスポンジボールで、高学年は少し硬めのボールを使ってレッスンしています。</p>
-        </div>
-      </div>
-
-      <div class="report-card reveal">
-        <div class="report-img">
-          <img src="images/activity_03.jpg" alt="高野山 森林セラピー" onerror="this.style.display='none';this.parentNode.innerHTML=''">
-        </div>
-        <div class="report-body">
-          <p class="report-date">ヨガ教室イベント</p>
-          <p class="report-text">ヨガ教室のイベントで高野山にて森林セラピーを開催！大自然の中で心も体もリフレッシュしました。</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ⑥ LINKS -->
-  <div class="sec-block" id="links">
-    <div class="block-header reveal">
-      <div class="block-icon icon-purple"></div>
-      <h2 class="block-title">リンク集</h2>
-    </div>
-    <div class="link-list reveal">
-
-      <a class="link-card" href="https://m.facebook.com/%E3%82%8F%E3%81%8B%E3%82%84%E3%81%BE%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E9%AC%BC%E3%81%94%E3%81%A3%E3%81%93%E3%82%B5%E3%83%BC%E3%82%AF%E3%83%AB-424943247884776/" target="_blank" rel="noopener">
-        <div class="link-icon"></div>
-        <div class="link-text">
-          <div class="link-name">わかやまスポーツ鬼ごっこ愛好会</div>
-          <div class="link-url">Facebook ページ</div>
-        </div>
-        <span class="link-arrow">→</span>
       </a>
+      <nav>
+        <a href="index.html">HOME</a>
+        <a href="about.html">クラブ紹介</a>
+        <a href="info.html">活動内容</a>
+        <a href="report.html">活動報告</a>
+        <a href="trial.html">体験・入会</a>
+        <a href="members.html" class="current">会員様向け</a>
+        <a href="contact.html">お問い合わせ</a>
+        <a href="trial.html" class="nav-cta">⚡ 無料体験</a>
+      </nav>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </header>
 
-      <a class="link-card" href="http://www.onigokko.or.jp/" target="_blank" rel="noopener">
-        <div class="link-icon"></div>
-        <div class="link-text">
-          <div class="link-name">一般社団法人 鬼ごっこ協会（公式ホームページ）</div>
-          <div class="link-url">onigokko.or.jp</div>
-        </div>
-        <span class="link-arrow">→</span>
-      </a>
-
-      <a class="link-card" href="http://kidslete.ikora.tv/" target="_blank" rel="noopener">
-        <div class="link-icon"></div>
-        <div class="link-text">
-          <div class="link-name">アスレチック教室 ブログ公開中</div>
-          <div class="link-url">kidslete.ikora.tv</div>
-        </div>
-        <span class="link-arrow">→</span>
-      </a>
-
-      <a class="link-card" href="http://onigokkoyasuharasc.ikora.tv/" target="_blank" rel="noopener">
-        <div class="link-icon"></div>
-        <div class="link-text">
-          <div class="link-name">スポーツ鬼ごっこ ブログ公開中</div>
-          <div class="link-url">onigokkoyasuharasc.ikora.tv</div>
-        </div>
-        <span class="link-arrow">→</span>
-      </a>
-
-      <a class="link-card" href="https://www.instagram.com/yasuhara_sports_club/" target="_blank" rel="noopener">
-        <div class="link-icon" style="background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);"></div>
-        <div class="link-text">
-          <div class="link-name">安原スポーツクラブ 公式Instagram</div>
-          <div class="link-url">@yasuhara_sports_club</div>
-        </div>
-        <span class="link-arrow">→</span>
-      </a>
-
+    <div class="mobile-menu" id="mobileMenu">
+      <button class="mobile-close" id="mobileClose">✕</button>
+      <a href="index.html">HOME</a>
+      <a href="about.html">クラブ紹介</a>
+      <a href="info.html">活動内容</a>
+      <a href="report.html">活動報告</a>
+      <a href="trial.html">体験・入会</a>
+      <a href="members.html">会員様向け</a>
+      <a href="contact.html">お問い合わせ</a>
+      <a href="trial.html" class="mobile-cta-sp">⚡ 無料体験はこちら</a>
     </div>
-  </div>
 
-</div><!-- /content-wrap -->
+    <!-- PAGE HERO -->
+    <div class="page-hero">
+      <div class="ph-deco"></div>
+      <div class="ph-emoji">
+        <span class="material-icons-round">badge</span>
+      </div>
+      <p class="page-hero-eyebrow">MEMBERS</p>
+      <h1>会員<span>様向け</span></h1>
+      <p>スケジュール・更新手続き・費用・活動報告などをご確認いただけます</p>
+    </div>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div>
-        <div class="footer-logo">
-          <div class="logo-ball">⚽</div>
-          <div class="logo-texts">
-            <span class="logo-main">安原スポーツクラブ</span>
+    <!-- JUMP NAV -->
+    <div class="jump-wrap reveal">
+      <div class="jump-nav">
+        <a class="jump-btn" href="#schedule">
+          <span class="material-icons-round">calendar_month</span>
+          スケジュール
+        </a>
+        <a class="jump-btn" href="#renewal">
+          <span class="material-icons-round">how_to_reg</span>
+          更新手続き
+        </a>
+        <a class="jump-btn" href="#fee">
+          <span class="material-icons-round">payments</span>
+          費用について
+        </a>
+        <a class="jump-btn" href="#insurance">
+          <span class="material-icons-round">health_and_safety</span>
+          保険について
+        </a>
+        <a class="jump-btn" href="#reports">
+          <span class="material-icons-round">article</span>
+          活動報告
+        </a>
+        <a class="jump-btn" href="#links">
+          <span class="material-icons-round">link</span>
+          リンク集
+        </a>
+      </div>
+    </div>
+
+    <div class="content-wrap">
+      <!-- ① SCHEDULE -->
+      <div class="sec-block" id="schedule">
+        <div class="block-header reveal">
+          <div class="block-icon icon-lime">
+            <span class="material-icons-round">event</span>
+          </div>
+          <h2 class="block-title">スケジュール</h2>
+        </div>
+        <div class="calendar-card reveal">
+          <iframe
+            src="https://calendar.google.com/calendar/embed?src=yasuhara.sports.club%40gmail.com&ctz=Asia%2FTokyo&mode=MONTH&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=0&showCalendars=0&showTz=0&hl=ja"
+            frameborder="0"
+            scrolling="no"
+            title="安原スポーツクラブ スケジュール"
+          >
+          </iframe>
+          <div class="calendar-footer">
+            ※表示されない場合は
+            <a href="https://calendar.google.com" target="_blank" rel="noopener"
+              >Googleカレンダーで開く</a
+            >
           </div>
         </div>
-        <p class="footer-desc">地域の子どもたちの健全な成長と、スポーツを通じた交流を目的に活動しています。</p>
       </div>
-      <div class="footer-col">
-        <h4>MENU</h4>
-        <ul>
-          <li><a href="about.html">クラブ紹介</a></li>
-          <li><a href="info.html">活動内容</a></li>
-          <li><a href="trial.html">体験・入会</a></li>
-          <li><a href="fee.html">会費のご案内</a></li>
-          <li><a href="rules.html">会則</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>SUPPORT</h4>
-        <ul>
-          <li><a href="members.html">会員様向け</a></li>
-          <li><a href="contact.html">お問い合わせ</a></li>
-          <li><a href="news.html">お知らせ一覧</a></li>
-          <li><a href="report.html">活動報告</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>Copyright © 安原スポーツクラブ All Rights Reserved.</p>
-      <p style="font-size:11px">Web Design: Template-Party</p>
-    </div>
-  </div>
-</footer>
 
-<a href="#" id="pagetop">↑</a>
-</body>
+      <!-- ② RENEWAL -->
+      <div class="sec-block" id="renewal">
+        <div class="block-header reveal">
+          <div class="block-icon icon-orange">
+            <span class="material-icons-round">assignment_turned_in</span>
+          </div>
+          <h2 class="block-title">新年度更新手続きについて</h2>
+        </div>
+        <div class="renewal-card reveal">
+          <div class="alert-banner">
+            <span class="alert-icon">
+              <span class="material-icons-round">warning</span>
+            </span>
+            <span
+              >参加教室が変わらない方も、必ず次年度の参加教室名のご連絡をお願いします</span
+            >
+          </div>
+          <div class="renewal-body">
+            <p>
+              毎年
+              <strong>2月〜3月</strong>
+              に実施する、参加教室の継続手続きについてご案内します。
+            </p>
+            <p>
+              毎年2月〜3月上旬に運営委員から配布される
+              <strong>「次年度の会員継続確認書」</strong> を記入の上、
+              <span class="deadline-pill">3月26日頃まで</span>
+              に各教室に付き添っている運営委員へご提出ください。
+              もしくは、事務局までFAXにてご提出ください。
+            </p>
+            <p>新年度は <strong>4月1日</strong> 開始となります。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ③ FEE -->
+      <div class="sec-block" id="fee">
+        <div class="block-header reveal">
+          <div class="block-icon icon-green">
+            <span class="material-icons-round">account_balance_wallet</span>
+          </div>
+          <h2 class="block-title">活動に必要な費用</h2>
+        </div>
+
+        <div class="fee-grid reveal">
+          <!-- スポーツ保険料 -->
+          <div class="fee-card">
+            <div class="fee-card-icon">
+              <span class="material-icons-round">health_and_safety</span>
+            </div>
+            <div class="fee-card-name">スポーツ保険料</div>
+            <div class="fee-row">
+              <span class="fee-row-label">中学生以下</span>
+              <span class="fee-row-value">800円</span>
+            </div>
+            <div class="fee-row">
+              <span class="fee-row-label">高校生〜64歳</span>
+              <span class="fee-row-value">1,850円</span>
+            </div>
+            <div class="fee-row">
+              <span class="fee-row-label">65歳以上</span>
+              <span class="fee-row-value">1,200円</span>
+            </div>
+          </div>
+
+          <!-- 年会費 -->
+          <div class="fee-card">
+            <div class="fee-card-icon"></div>
+            <div class="fee-card-name">年会費</div>
+            <div class="fee-row">
+              <span class="fee-row-label">子ども</span>
+              <span class="fee-row-value">1,000円</span>
+            </div>
+            <div class="fee-row">
+              <span class="fee-row-label">大人</span>
+              <span class="fee-row-value">3,000円</span>
+            </div>
+            <div class="fee-row">
+              <span class="fee-row-label">ファミリー</span>
+              <span class="fee-row-value">5,000円</span>
+            </div>
+            <div class="fee-note-mini">
+              登録のゆうちょ銀行口座から毎年<strong>4月</strong>に引き落とし
+            </div>
+          </div>
+
+          <!-- 教室参加料 -->
+          <div class="fee-card">
+            <div class="fee-card-icon"></div>
+            <div class="fee-card-name">教室参加料</div>
+            <div class="fee-row">
+              <span class="fee-row-label">金額</span>
+              <span
+                class="fee-row-value"
+                style="
+                  font-size: 13px;
+                  font-family: &quot;Noto Sans JP&quot;, sans-serif;
+                  color: var(--gray);
+                "
+                >教室により異なります</span
+              >
+            </div>
+            <div class="fee-note-mini">
+              詳細は<a
+                href="info.html"
+                style="color: var(--green); font-weight: 700"
+                >活動内容ページ</a
+              >をご参照ください
+            </div>
+          </div>
+        </div>
+
+        <!-- 引き落とし日程 -->
+        <div class="debit-box reveal">
+          <p class="debit-title">引き落とし日程</p>
+          <div class="debit-row">
+            <span class="debit-label">サッカー教室</span>
+            <span class="debit-val">毎月 20日</span>
+          </div>
+          <div class="debit-row">
+            <span class="debit-label">その他の教室</span>
+            <span class="debit-val">4月・7月・10月・1月 各20日（3か月分）</span>
+          </div>
+          <div class="debit-row">
+            <span class="debit-label">年度途中入会の場合</span>
+            <span class="debit-val">入会月または翌月20日に引き落とし</span>
+          </div>
+          <div class="debit-row">
+            <span class="debit-label">引落日が休日の場合</span>
+            <span class="debit-val">翌営業日</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ④ INSURANCE -->
+      <div class="sec-block" id="insurance">
+        <div class="block-header reveal">
+          <div class="block-icon icon-sky">
+            <span class="material-icons-round">verified_user</span>
+          </div>
+          <h2 class="block-title">保険について</h2>
+        </div>
+        <table class="ins-table reveal">
+          <thead>
+            <tr>
+              <th>補償内容</th>
+              <th>金額</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>通院</td>
+              <td>
+                <span class="ins-val">1,500円</span
+                ><span
+                  style="font-size: 12px; color: var(--gray); margin-left: 6px"
+                  >／日</span
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>入院</td>
+              <td>
+                <span class="ins-val">4,000円</span
+                ><span
+                  style="font-size: 12px; color: var(--gray); margin-left: 6px"
+                  >／日</span
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>死亡</td>
+              <td><span class="ins-val">2,000万円</span></td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="ins-note reveal">
+          ※ 1日の通院から適用されます。万一けがをされた場合は、<strong
+            style="color: var(--dark)"
+            >速やかに事務局までご連絡ください。</strong
+          >
+        </p>
+      </div>
+
+      <!-- ⑥ LINKS -->
+      <div class="sec-block" id="links">
+        <div class="block-header reveal">
+          <div class="block-icon icon-purple">
+            <span class="material-icons-round">public</span>
+          </div>
+          <h2 class="block-title">リンク集</h2>
+        </div>
+        <div class="link-list reveal">
+          <a
+            class="link-card"
+            href="https://m.facebook.com/%E3%82%8F%E3%81%8B%E3%82%84%E3%81%BE%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E9%AC%BC%E3%81%94%E3%81%A3%E3%81%93%E3%82%B5%E3%83%BC%E3%82%AF%E3%83%AB-424943247884776/"
+            target="_blank"
+          >
+            <div class="link-icon" style="background: #1877f2">
+              <i class="fa-brands fa-facebook-f"></i>
+            </div>
+
+            <div class="link-text">
+              <div class="link-name">スポーツ鬼ごっこ協会</div>
+              <div class="link-url">m.facebook.com/onigokko</div>
+            </div>
+
+            <span class="link-arrow">
+              <span class="material-icons-round">arrow_forward_ios</span>
+            </span>
+          </a>
+
+          <a
+            class="link-card"
+            href="http://www.onigokko.or.jp/"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="link-icon">
+              <span class="material-icons-round">directions_run</span>
+            </div>
+            <div class="link-text">
+              <div class="link-name">
+                一般社団法人 鬼ごっこ協会（公式ホームページ）
+              </div>
+              <div class="link-url">onigokko.or.jp</div>
+            </div>
+            <span class="link-arrow">
+              <span class="material-icons-round">arrow_forward_ios</span>
+            </span>
+          </a>
+
+          <a
+            class="link-card"
+            href="http://kidslete.ikora.tv/"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="link-icon">
+              <span class="material-icons-round">public</span>
+            </div>
+            <div class="link-text">
+              <div class="link-name">アスレチック教室 ブログ公開中</div>
+              <div class="link-url">kidslete.ikora.tv</div>
+            </div>
+            <span class="link-arrow">
+              <span class="material-icons-round">arrow_forward_ios</span>
+            </span>
+          </a>
+
+          <a
+            class="link-card"
+            href="http://onigokkoyasuharasc.ikora.tv/"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="link-icon">
+              <span class="material-icons-round">sports</span>
+            </div>
+            <div class="link-text">
+              <div class="link-name">スポーツ鬼ごっこ ブログ公開中</div>
+              <div class="link-url">onigokkoyasuharasc.ikora.tv</div>
+            </div>
+            <span class="link-arrow">
+              <span class="material-icons-round">arrow_forward_ios</span>
+            </span>
+          </a>
+
+          <a
+            class="link-card"
+            href="https://www.instagram.com/yasuhara_sports_club/"
+            target="_blank"
+            rel="noopener"
+          >
+            <div
+              class="link-icon"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  #f09433,
+                  #e6683c,
+                  #dc2743,
+                  #cc2366,
+                  #bc1888
+                );
+              "
+            >
+              <span class="material-icons-round">photo_camera</span>
+            </div>
+            <div class="link-text">
+              <div class="link-name">安原スポーツクラブ 公式Instagram</div>
+              <div class="link-url">@yasuhara_sports_club</div>
+            </div>
+            <span class="link-arrow">
+              <span class="material-icons-round">arrow_forward_ios</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- /content-wrap -->
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div>
+            <div class="footer-logo">
+              <span class="material-icons-round">sports</span>
+              <div class="logo-texts">
+                <span class="logo-main">安原スポーツクラブ</span>
+              </div>
+            </div>
+            <p class="footer-desc">
+              地域の子どもたちの健全な成長と、スポーツを通じた交流を目的に活動しています。
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>MENU</h4>
+            <ul>
+              <li><a href="about.html">クラブ紹介</a></li>
+              <li><a href="info.html">活動内容</a></li>
+              <li><a href="trial.html">体験・入会</a></li>
+              <li><a href="fee.html">会費のご案内</a></li>
+              <li><a href="rules.html">会則</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>SUPPORT</h4>
+            <ul>
+              <li><a href="members.html">会員様向け</a></li>
+              <li><a href="contact.html">お問い合わせ</a></li>
+              <li><a href="news.html">お知らせ一覧</a></li>
+              <li><a href="report.html">活動報告</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>Copyright © 安原スポーツクラブ All Rights Reserved.</p>
+          <p style="font-size: 11px">Web Design: Template-Party</p>
+        </div>
+      </div>
+    </footer>
+
+    <a href="#" id="pagetop">
+      <span class="material-icons-round">keyboard_arrow_up</span>
+    </a>
+  </body>
 </html>
