@@ -91,15 +91,15 @@
   opacity: 1;
 }
 .hero-slide:nth-child(1) {
-  background-image: url("../images/トップページ用写真.JPG");
+  background-image: url("../images/top-slide1.jpg");
   background-color: #0e3d21;
 }
 .hero-slide:nth-child(2) {
-  background-image: url("../images/トップページ用写真2.jpg");
+  background-image: url("../images/top-slide2.jpg");
   background-color: #0a2e16;
 }
 .hero-slide:nth-child(3) {
-  background-image: url("../images/トップページ用写真3.jpg");
+  background-image: url("../images/top-slide3.jpg");
   background-color: #075c2c;
 }
 
