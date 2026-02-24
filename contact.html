@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="ja">
   <head>
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,6 +25,14 @@
       href="https://fonts.googleapis.com/css2?family=Material+Icons+Round"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700;900&display=swap"
+      rel="stylesheet"
+    />
     <script defer src="js/common.js"></script>
   </head>
   <body>
@@ -29,7 +40,7 @@
     <header id="header">
       <a href="index.html" class="logo">
         <div class="logo-ball">
-          <span class="material-icons-round">sports_soccer</span>
+          <span class="material-symbols-outlined">emoji_events</span>
         </div>
         <div class="logo-texts">
           <span class="logo-main">安原スポーツクラブ</span>
@@ -37,14 +48,17 @@
         </div>
       </a>
       <nav>
-        <a href="index.html">HOME</a>
+        <a href="index.html">ホーム</a>
         <a href="about.html">クラブ紹介</a>
         <a href="info.html">活動内容</a>
         <a href="report.html">活動報告</a>
         <a href="trial.html">体験・入会</a>
         <a href="members.html">会員様向け</a>
         <a href="contact.html" class="current">お問い合わせ</a>
-        <a href="trial.html" class="nav-cta">⚡ 無料体験</a>
+        <a href="trial.html" class="nav-cta">
+          <span class="material-symbols-outlined">bolt</span>
+          無料体験
+        </a>
       </nav>
       <div class="hamburger" id="hamburger">
         <span></span><span></span><span></span>
@@ -53,7 +67,7 @@
 
     <div class="mobile-menu" id="mobileMenu">
       <button class="mobile-close" id="mobileClose">✕</button>
-      <a href="index.html">HOME</a>
+      <a href="index.html">ホーム</a>
       <a href="about.html">クラブ紹介</a>
       <a href="info.html">活動内容</a>
       <a href="report.html">活動報告</a>
@@ -77,7 +91,7 @@
       <!-- 担当者 -->
       <div class="staff-card reveal">
         <div class="staff-avatar">
-          <span class="material-icons-round">person</span>
+          <span class="material-symbols-outlined">person</span>
         </div>
         <div class="staff-info">
           <p class="staff-label">担当</p>
@@ -93,11 +107,11 @@
       <div class="contact-grid reveal">
         <a class="contact-card" href="tel:000-0000-0000">
           <div class="contact-card-icon icon-lime">
-            <span class="material-icons-round">call</span>
+            <span class="material-symbols-outlined">call</span>
           </div>
           <div>
             <p class="contact-card-label">電話</p>
-            <p class="contact-card-value">000-0000-0000</p>
+            <p class="contact-card-value">090-5060-0115</p>
           </div>
           <p class="contact-card-sub">
             受付時間：<strong style="color: var(--dark); font-weight: 700"
@@ -105,14 +119,14 @@
             ><br />（土日祝も対応）
           </p>
           <span class="contact-card-action">
-            <span class="material-icons-round">call</span>
+            <span class="material-symbols-outlined">call</span>
             電話をかける
           </span>
         </a>
 
         <a class="contact-card" href="mailto:XXXXX@hotmail.com">
           <div class="contact-card-icon icon-sky">
-            <span class="material-icons-round">mail</span>
+            <span class="material-symbols-outlined">mail</span>
           </div>
           <div>
             <p class="contact-card-label">メール</p>
@@ -120,14 +134,14 @@
               class="contact-card-value"
               style="font-size: clamp(13px, 2vw, 18px); word-break: break-all"
             >
-              XXXXX@hotmail.com
+              hidenoribaba@hotmail.com
             </p>
           </div>
           <p class="contact-card-sub">
             24時間受付中。<br />返信は通常1〜2日以内。
           </p>
           <span class="contact-card-action">
-            <span class="material-icons-round">mail</span>
+            <span class="material-symbols-outlined">mail</span>
             メールを送る
           </span>
         </a>
@@ -136,7 +150,7 @@
       <!-- FAX note -->
       <div class="fax-note reveal">
         <div class="fax-note-icon">
-          <span class="material-icons-round">print</span>
+          <span class="material-symbols-outlined">print</span>
         </div>
         <div class="fax-note-body">
           <p class="fax-note-title">FAXについて</p>
@@ -150,14 +164,14 @@
       <div class="location-section reveal">
         <div class="location-title">
           <div class="location-title-icon">
-            <span class="material-icons-round">place</span>
+            <span class="material-symbols-outlined">place</span>
           </div>
           主な活動場所
         </div>
         <div class="location-grid">
           <div class="location-card">
             <div class="location-card-icon">
-              <span class="material-icons-round">school</span>
+              <span class="material-symbols-outlined">school</span>
             </div>
             <p class="location-card-name">和歌山市立安原小学校</p>
             <p class="location-card-addr">
@@ -166,7 +180,7 @@
           </div>
           <div class="location-card">
             <div class="location-card-icon">
-              <span class="material-icons-round">location_city</span>
+              <span class="material-symbols-outlined">location_city</span>
             </div>
             <p class="location-card-name">東部コミュニティセンター</p>
             <p class="location-card-addr">
@@ -183,7 +197,7 @@
           <strong>無料体験</strong>からスタートするのがおすすめです！
         </p>
         <a href="trial.html" class="btn-lime">
-          <span class="material-icons-round">bolt</span>
+          <span class="material-symbols-outlined">bolt</span>
           無料体験・入会の流れを見る
         </a>
       </div>
@@ -196,7 +210,7 @@
           <div>
             <div class="footer-logo">
               <div class="logo-ball">
-                <span class="material-icons-round">sports_soccer</span>
+                <span class="material-symbols-outlined">sports_soccer</span>
               </div>
               <div class="logo-texts">
                 <span class="logo-main">安原スポーツクラブ</span>
@@ -227,13 +241,13 @@
         </div>
         <div class="footer-bottom">
           <p>Copyright &copy; 安原スポーツクラブ All Rights Reserved.</p>
-          <p style="font-size: 11px">Web Design: Template-Party</p>
+          <p style="font-size: 11px">Web Design: YasuharaSportsClub</p>
         </div>
       </div>
     </footer>
 
     <a href="#" id="pagetop">
-      <span class="material-icons-round">keyboard_arrow_up</span>
+      <span class="material-symbols-outlined">keyboard_arrow_up</span>
     </a>
   </body>
 </html>

@@ -485,7 +485,15 @@ footer::before {
 #pagetop:hover {
   transform: translateY(-4px);
 }
+/* ─── material-symbols-outlined ─── */
 
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined" !important;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  vertical-align: middle;
+}
 /* ─── REVEAL ANIMATION ─── */
 .reveal {
   opacity: 0;
@@ -527,6 +535,16 @@ footer::before {
   margin-bottom: 28px;
   letter-spacing: 1px;
 }
+/* ─── POP FONT OVERRIDE ─── */
+.sec-title,
+.page-hero h1,
+.cta-strip-text h3,
+.mobile-menu a,
+.logo-main {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 900;
+}
+
 .sec-title .ac {
   color: var(--green);
 }

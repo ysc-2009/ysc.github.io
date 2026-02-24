@@ -3,7 +3,7 @@
    ========================================================= */
 
 /* ─── MATERIAL ICONS ─── */
-.material-icons-round {
+.material-symbols-outlined {
   font-family: "Material Icons Round";
   font-weight: normal;
   font-style: normal;
@@ -498,7 +498,7 @@
   animation: imgFloat 3s ease-in-out infinite;
   z-index: 2;
 }
-.photo-float .material-icons-round {
+.photo-float .material-symbols-outlined {
   font-size: 26px;
   color: var(--green);
 }
@@ -601,7 +601,7 @@
   justify-content: center;
   margin-bottom: 14px;
 }
-.act-icon-wrap .material-icons-round {
+.act-icon-wrap .material-symbols-outlined {
   font-size: 28px;
   color: var(--green);
 }
@@ -743,7 +743,7 @@
   justify-content: center;
   margin-bottom: 16px;
 }
-.loc-icon-wrap .material-icons-round {
+.loc-icon-wrap .material-symbols-outlined {
   font-size: 26px;
   color: var(--dark);
 }
@@ -909,7 +909,7 @@ footer {
   width: 46px;
   height: 46px;
 }
-#pagetop .material-icons-round {
+#pagetop .material-symbols-outlined {
   font-size: 22px;
 }
 

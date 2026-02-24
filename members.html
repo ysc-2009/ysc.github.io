@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="ja">
   <head>
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,27 +23,40 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700;900&display=swap"
+      rel="stylesheet"
+    />
     <script defer src="js/common.js"></script>
   </head>
   <body>
     <!-- HEADER -->
     <header id="header">
       <a href="index.html" class="logo">
-        <div class="logo-ball">⚽</div>
+        <div class="logo-ball">
+          <span class="material-symbols-outlined">emoji_events</span>
+        </div>
         <div class="logo-texts">
           <span class="logo-main">安原スポーツクラブ</span>
           <span class="logo-sub">総合型地域スポーツクラブ・和歌山</span>
         </div>
       </a>
       <nav>
-        <a href="index.html">HOME</a>
+        <a href="index.html">ホーム</a>
         <a href="about.html">クラブ紹介</a>
         <a href="info.html">活動内容</a>
         <a href="report.html">活動報告</a>
         <a href="trial.html">体験・入会</a>
         <a href="members.html" class="current">会員様向け</a>
         <a href="contact.html">お問い合わせ</a>
-        <a href="trial.html" class="nav-cta">⚡ 無料体験</a>
+        <a href="trial.html" class="nav-cta">
+          <span class="material-symbols-outlined">bolt</span>
+          無料体験
+        </a>
       </nav>
       <div class="hamburger" id="hamburger">
         <span></span><span></span><span></span>
@@ -49,7 +65,7 @@
 
     <div class="mobile-menu" id="mobileMenu">
       <button class="mobile-close" id="mobileClose">✕</button>
-      <a href="index.html">HOME</a>
+      <a href="index.html">ホーム</a>
       <a href="about.html">クラブ紹介</a>
       <a href="info.html">活動内容</a>
       <a href="report.html">活動報告</a>
@@ -63,7 +79,7 @@
     <div class="page-hero">
       <div class="ph-deco"></div>
       <div class="ph-emoji">
-        <span class="material-icons-round">badge</span>
+        <span class="material-symbols-outlined">badge</span>
       </div>
       <p class="page-hero-eyebrow">MEMBERS</p>
       <h1>会員<span>様向け</span></h1>
@@ -74,27 +90,27 @@
     <div class="jump-wrap reveal">
       <div class="jump-nav">
         <a class="jump-btn" href="#schedule">
-          <span class="material-icons-round">calendar_month</span>
+          <span class="material-symbols-outlined">calendar_month</span>
           スケジュール
         </a>
         <a class="jump-btn" href="#renewal">
-          <span class="material-icons-round">how_to_reg</span>
+          <span class="material-symbols-outlined">how_to_reg</span>
           更新手続き
         </a>
         <a class="jump-btn" href="#fee">
-          <span class="material-icons-round">payments</span>
+          <span class="material-symbols-outlined">payments</span>
           費用について
         </a>
         <a class="jump-btn" href="#insurance">
-          <span class="material-icons-round">health_and_safety</span>
+          <span class="material-symbols-outlined">health_and_safety</span>
           保険について
         </a>
         <a class="jump-btn" href="#reports">
-          <span class="material-icons-round">article</span>
+          <span class="material-symbols-outlined">article</span>
           活動報告
         </a>
         <a class="jump-btn" href="#links">
-          <span class="material-icons-round">link</span>
+          <span class="material-symbols-outlined">link</span>
           リンク集
         </a>
       </div>
@@ -105,7 +121,7 @@
       <div class="sec-block" id="schedule">
         <div class="block-header reveal">
           <div class="block-icon icon-lime">
-            <span class="material-icons-round">event</span>
+            <span class="material-symbols-outlined">event</span>
           </div>
           <h2 class="block-title">スケジュール</h2>
         </div>
@@ -130,14 +146,14 @@
       <div class="sec-block" id="renewal">
         <div class="block-header reveal">
           <div class="block-icon icon-orange">
-            <span class="material-icons-round">assignment_turned_in</span>
+            <span class="material-symbols-outlined">assignment_turned_in</span>
           </div>
           <h2 class="block-title">新年度更新手続きについて</h2>
         </div>
         <div class="renewal-card reveal">
           <div class="alert-banner">
             <span class="alert-icon">
-              <span class="material-icons-round">warning</span>
+              <span class="material-symbols-outlined">warning</span>
             </span>
             <span
               >参加教室が変わらない方も、必ず次年度の参加教室名のご連絡をお願いします</span
@@ -165,7 +181,9 @@
       <div class="sec-block" id="fee">
         <div class="block-header reveal">
           <div class="block-icon icon-green">
-            <span class="material-icons-round">account_balance_wallet</span>
+            <span class="material-symbols-outlined"
+              >account_balance_wallet</span
+            >
           </div>
           <h2 class="block-title">活動に必要な費用</h2>
         </div>
@@ -174,7 +192,7 @@
           <!-- スポーツ保険料 -->
           <div class="fee-card">
             <div class="fee-card-icon">
-              <span class="material-icons-round">health_and_safety</span>
+              <span class="material-symbols-outlined">health_and_safety</span>
             </div>
             <div class="fee-card-name">スポーツ保険料</div>
             <div class="fee-row">
@@ -264,7 +282,7 @@
       <div class="sec-block" id="insurance">
         <div class="block-header reveal">
           <div class="block-icon icon-sky">
-            <span class="material-icons-round">verified_user</span>
+            <span class="material-symbols-outlined">verified_user</span>
           </div>
           <h2 class="block-title">保険について</h2>
         </div>
@@ -314,7 +332,7 @@
       <div class="sec-block" id="links">
         <div class="block-header reveal">
           <div class="block-icon icon-purple">
-            <span class="material-icons-round">public</span>
+            <span class="material-symbols-outlined">public</span>
           </div>
           <h2 class="block-title">リンク集</h2>
         </div>
@@ -334,7 +352,7 @@
             </div>
 
             <span class="link-arrow">
-              <span class="material-icons-round">arrow_forward_ios</span>
+              <span class="material-symbols-outlined">arrow_forward_ios</span>
             </span>
           </a>
 
@@ -345,7 +363,7 @@
             rel="noopener"
           >
             <div class="link-icon">
-              <span class="material-icons-round">directions_run</span>
+              <span class="material-symbols-outlined">directions_run</span>
             </div>
             <div class="link-text">
               <div class="link-name">
@@ -354,7 +372,7 @@
               <div class="link-url">onigokko.or.jp</div>
             </div>
             <span class="link-arrow">
-              <span class="material-icons-round">arrow_forward_ios</span>
+              <span class="material-symbols-outlined">arrow_forward_ios</span>
             </span>
           </a>
 
@@ -365,14 +383,14 @@
             rel="noopener"
           >
             <div class="link-icon">
-              <span class="material-icons-round">public</span>
+              <span class="material-symbols-outlined">public</span>
             </div>
             <div class="link-text">
               <div class="link-name">アスレチック教室 ブログ公開中</div>
               <div class="link-url">kidslete.ikora.tv</div>
             </div>
             <span class="link-arrow">
-              <span class="material-icons-round">arrow_forward_ios</span>
+              <span class="material-symbols-outlined">arrow_forward_ios</span>
             </span>
           </a>
 
@@ -383,14 +401,14 @@
             rel="noopener"
           >
             <div class="link-icon">
-              <span class="material-icons-round">sports</span>
+              <span class="material-symbols-outlined">sports</span>
             </div>
             <div class="link-text">
               <div class="link-name">スポーツ鬼ごっこ ブログ公開中</div>
               <div class="link-url">onigokkoyasuharasc.ikora.tv</div>
             </div>
             <span class="link-arrow">
-              <span class="material-icons-round">arrow_forward_ios</span>
+              <span class="material-symbols-outlined">arrow_forward_ios</span>
             </span>
           </a>
 
@@ -413,14 +431,14 @@
                 );
               "
             >
-              <span class="material-icons-round">photo_camera</span>
+              <span class="material-symbols-outlined">photo_camera</span>
             </div>
             <div class="link-text">
               <div class="link-name">安原スポーツクラブ 公式Instagram</div>
               <div class="link-url">@yasuhara_sports_club</div>
             </div>
             <span class="link-arrow">
-              <span class="material-icons-round">arrow_forward_ios</span>
+              <span class="material-symbols-outlined">arrow_forward_ios</span>
             </span>
           </a>
         </div>
@@ -434,7 +452,7 @@
         <div class="footer-top">
           <div>
             <div class="footer-logo">
-              <span class="material-icons-round">sports</span>
+              <span class="material-symbols-outlined">sports</span>
               <div class="logo-texts">
                 <span class="logo-main">安原スポーツクラブ</span>
               </div>
@@ -465,13 +483,13 @@
         </div>
         <div class="footer-bottom">
           <p>Copyright © 安原スポーツクラブ All Rights Reserved.</p>
-          <p style="font-size: 11px">Web Design: Template-Party</p>
+          <p style="font-size: 11px">Web Design: YasuharaSportsClub</p>
         </div>
       </div>
     </footer>
 
     <a href="#" id="pagetop">
-      <span class="material-icons-round">keyboard_arrow_up</span>
+      <span class="material-symbols-outlined">keyboard_arrow_up</span>
     </a>
   </body>
 </html>

@@ -1,251 +1,294 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700;900&family=Righteous&display=swap" rel="stylesheet">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>活動報告｜安原スポーツクラブ</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/common.css">
-  <link rel="stylesheet" href="css/report.css">
-  <script defer src="js/common.js"></script>
-  <script defer src="js/filter.js"></script>
-</head>
-<body>
-
-<!-- HEADER -->
-<header id="header">
-  <a href="index.html" class="logo">
-    <div class="logo-ball">⚽</div>
-    <div class="logo-texts">
-      <span class="logo-main">安原スポーツクラブ</span>
-      <span class="logo-sub">総合型地域スポーツクラブ・和歌山</span>
-    </div>
-  </a>
-  <nav>
-    <a href="index.html">HOME</a>
-    <a href="about.html">クラブ紹介</a>
-    <a href="info.html">活動内容</a>
-    <a href="report.html" class="current">活動報告</a>
-    <a href="trial.html">体験・入会</a>
-    <a href="members.html">会員様向け</a>
-    <a href="contact.html">お問い合わせ</a>
-    <a href="trial.html" class="nav-cta">⚡ 無料体験</a>
-  </nav>
-  <div class="hamburger" id="hamburger">
-    <span></span><span></span><span></span>
-  </div>
-</header>
-
-<div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-close" id="mobileClose">✕</button>
-  <a href="index.html">HOME</a>
-  <a href="about.html">クラブ紹介</a>
-  <a href="info.html">活動内容</a>
-  <a href="report.html">活動報告</a>
-  <a href="trial.html">体験・入会</a>
-  <a href="members.html">会員様向け</a>
-  <a href="contact.html">お問い合わせ</a>
-  <a href="trial.html" class="mobile-cta-sp">⚡ 無料体験はこちら</a>
-</div>
-
-<!-- PAGE HERO -->
-<div class="page-hero">
-  <div class="ph-deco"></div>
-  <div class="ph-emoji">📸</div>
-  <p class="page-hero-eyebrow">ACTIVITY REPORT</p>
-  <h1>活動<span>報告</span></h1>
-  <p>クラブのイベント・教室の様子をお届けします！</p>
-</div>
-
-<!-- FILTER -->
-<div class="filter-wrap reveal">
-  <button class="filter-btn active" data-cat="all">すべて</button>
-  <button class="filter-btn" data-cat="soccer">⚽ サッカー</button>
-  <button class="filter-btn" data-cat="onigokko">👹 鬼ごっこ</button>
-  <button class="filter-btn" data-cat="dance">💃 ダンス</button>
-  <button class="filter-btn" data-cat="yoga">🧘 ヨガ</button>
-  <button class="filter-btn" data-cat="tennis">🎾 テニス</button>
-  <button class="filter-btn" data-cat="athletic">🤸 アスレチック</button>
-  <button class="filter-btn" data-cat="event">🎉 イベント</button>
-</div>
-
-<!-- REPORTS GRID -->
-<div class="reports-wrap">
-  <div class="reports-grid" id="reportsGrid">
-
-    <!-- 1 -->
-    <div class="report-card reveal" data-cat="soccer">
-      <div class="report-img-fallback">⚽</div>
-      <div class="report-body">
-        <div class="report-meta">
-          <span class="report-date">2025.11.26</span>
-          <span class="report-tag tag-soccer">サッカー</span>
+  <head>
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700;900&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>活動報告｜安原スポーツクラブ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/report.css" />
+    <script defer src="js/common.js"></script>
+    <script defer src="js/filter.js"></script>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header id="header">
+      <a href="index.html" class="logo">
+        <div class="logo-ball">
+          <span class="material-symbols-outlined">emoji_events</span>
         </div>
-        <p class="report-title">智弁学園小学校との交流試合を開催しました！</p>
-        <p>安原小学校グラウンドにて、智弁学園小学校のみなさんと交流試合を行いました。子どもたちは全力でプレーし、たくさんの笑顔があふれました。</p>
-        <span class="report-more">くわしく見る</span>
-      </div>
-    </div>
-
-    <!-- 2 -->
-    <div class="report-card reveal" data-cat="onigokko">
-      <div class="report-img-fallback">🏃</div>
-      <div class="report-body">
-        <div class="report-meta">
-          <span class="report-date">2025.03.16</span>
-          <span class="report-tag tag-onigokko">スポーツ鬼ごっこ</span>
+        <div class="logo-texts">
+          <span class="logo-main">安原スポーツクラブ</span>
+          <span class="logo-sub">総合型地域スポーツクラブ・和歌山</span>
         </div>
-        <p class="report-title">滋賀県希望ヶ丘文化公園でスポーツ鬼ごっこを楽しみました</p>
-        <p>滋賀県希望ヶ丘文化公園の広大な芝生で、スポーツ鬼ごっこを思いきり楽しみました。他クラブとの対戦もあり、刺激的な一日でした。</p>
-        <span class="report-more">くわしく見る</span>
+      </a>
+      <nav>
+        <a href="index.html">ホーム</a>
+        <a href="about.html">クラブ紹介</a>
+        <a href="info.html">活動内容</a>
+        <a href="report.html" class="current">活動報告</a>
+        <a href="trial.html">体験・入会</a>
+        <a href="members.html">会員様向け</a>
+        <a href="contact.html">お問い合わせ</a>
+        <a href="trial.html" class="nav-cta">
+          <span class="material-symbols-outlined">bolt</span>
+          無料体験
+        </a>
+      </nav>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
       </div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <button class="mobile-close" id="mobileClose">✕</button>
+      <a href="index.html">ホーム</a>
+      <a href="about.html">クラブ紹介</a>
+      <a href="info.html">活動内容</a>
+      <a href="report.html">活動報告</a>
+      <a href="trial.html">体験・入会</a>
+      <a href="members.html">会員様向け</a>
+      <a href="contact.html">お問い合わせ</a>
+      <a href="trial.html" class="mobile-cta-sp">⚡ 無料体験はこちら</a>
     </div>
 
-    <!-- 3 -->
-    <div class="report-card reveal" data-cat="yoga">
-      <div class="report-img-fallback">🧘</div>
-      <div class="report-body">
-        <div class="report-meta">
-          <span class="report-date">2024 夏</span>
-          <span class="report-tag tag-yoga">ヨガ</span>
-        </div>
-        <p class="report-title">親子ヨガイベントを開催しました</p>
-        <p>夏の特別イベントとして、親子で参加できるヨガ教室を開催しました。普段とは違う穏やかな時間の中で、親子の絆を深めることができました。</p>
-        <span class="report-more">くわしく見る</span>
-      </div>
+    <!-- PAGE HERO -->
+    <div class="page-hero">
+      <div class="ph-deco"></div>
+      <div class="ph-emoji">📸</div>
+      <p class="page-hero-eyebrow">ACTIVITY REPORT</p>
+      <h1>活動<span>報告</span></h1>
+      <p>クラブのイベント・教室の様子をお届けします！</p>
     </div>
 
-    <!-- 4 -->
-    <div class="report-card reveal" data-cat="dance">
-      <div class="report-img-fallback">💃</div>
-      <div class="report-body">
-        <div class="report-meta">
-          <span class="report-date">2017.03.18</span>
-          <span class="report-tag tag-dance">ダンス</span>
-        </div>
-        <p class="report-title">スポーツフェスティバルでダンスを披露！</p>
-        <p>地域スポーツフェスティバルのステージで、ダンス教室の生徒たちが日頃の練習の成果を元気いっぱいに披露しました。会場は大きな拍手に包まれました。</p>
-        <span class="report-more">くわしく見る</span>
-      </div>
+    <!-- FILTER -->
+    <div class="filter-wrap reveal">
+      <button class="filter-btn active" data-cat="all">すべて</button>
+      <button class="filter-btn" data-cat="soccer">⚽ サッカー</button>
+      <button class="filter-btn" data-cat="onigokko">👹 鬼ごっこ</button>
+      <button class="filter-btn" data-cat="dance">💃 ダンス</button>
+      <button class="filter-btn" data-cat="yoga">🧘 ヨガ</button>
+      <button class="filter-btn" data-cat="tennis">🎾 テニス</button>
+      <button class="filter-btn" data-cat="athletic">🤸 アスレチック</button>
+      <button class="filter-btn" data-cat="event">🎉 イベント</button>
     </div>
 
-    <!-- 5 -->
-    <div class="report-card reveal" data-cat="tennis">
-      <div class="report-img-fallback">🎾</div>
-      <div class="report-body">
-        <div class="report-meta">
-          <span class="report-date">—</span>
-          <span class="report-tag tag-tennis">ショートテニス</span>
-        </div>
-        <p class="report-title">ショートテニス教室の活動の様子</p>
-        <p>安原小学校体育館でのショートテニス教室の様子です。低学年・高学年に分かれ、楽しくラリーを続けながらテニスの基本を学んでいます。</p>
-        <span class="report-more">くわしく見る</span>
-      </div>
-    </div>
-
-    <!-- 6 -->
-    <div class="report-card reveal" data-cat="yoga">
-      <div class="report-img-fallback">🌿</div>
-      <div class="report-body">
-        <div class="report-meta">
-          <span class="report-date">—</span>
-          <span class="report-tag tag-yoga">ヨガ</span>
-        </div>
-        <p class="report-title">高野山で森林セラピーヨガを体験しました</p>
-        <p>大自然の中の高野山で、森林セラピーと組み合わせた特別ヨガイベントを開催。自然の香りと澄んだ空気の中で、心と体をリフレッシュしました。</p>
-        <span class="report-more">くわしく見る</span>
-      </div>
-    </div>
-
-    <!-- 7 -->
-    <div class="report-card reveal" data-cat="athletic">
-      <div class="report-img-fallback">🤸</div>
-      <div class="report-body">
-        <div class="report-meta">
-          <span class="report-date">—</span>
-          <span class="report-tag tag-athletic">アスレチック</span>
-        </div>
-        <p class="report-title">アスレチック教室の活動レポート</p>
-        <p>様々な運動を通じて体を動かす楽しさを学ぶアスレチック教室。子どもたちが笑顔でチャレンジする姿が印象的でした！</p>
-        <span class="report-more">くわしく見る</span>
-      </div>
-    </div>
-
-    <!-- 8 -->
-    <div class="report-card reveal" data-cat="event">
-      <div class="report-img-fallback">🎉</div>
-      <div class="report-body">
-        <div class="report-meta">
-          <span class="report-date">—</span>
-          <span class="report-tag tag-event">イベント</span>
-        </div>
-        <p class="report-title">クラブ発表会・年間まとめ</p>
-        <p>1年間の活動のまとめとして、各教室が日頃の成果を発表するイベントを開催しました。子どもたちの成長を感じる温かいひとときでした。</p>
-        <span class="report-more">くわしく見る</span>
-      </div>
-    </div>
-
-    <!-- 9 -->
-    <div class="report-card reveal" data-cat="onigokko">
-      <div class="report-img-fallback">👹</div>
-      <div class="report-body">
-        <div class="report-meta">
-          <span class="report-date">—</span>
-          <span class="report-tag tag-onigokko">スポーツ鬼ごっこ</span>
-        </div>
-        <p class="report-title">スポーツ鬼ごっこ大会に参加しました！</p>
-        <p>正式なルールに基づくスポーツ鬼ごっこ大会に参加。チームワークを発揮しながら、白熱した試合を繰り広げました。</p>
-        <span class="report-more">くわしく見る</span>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div>
-        <div class="footer-logo">
-          <div class="logo-ball">⚽</div>
-          <div class="logo-texts">
-            <span class="logo-main">安原スポーツクラブ</span>
+    <!-- REPORTS GRID -->
+    <div class="reports-wrap">
+      <div class="reports-grid" id="reportsGrid">
+        <!-- 1 -->
+        <div class="report-card reveal" data-cat="soccer">
+          <div class="report-img-fallback">⚽</div>
+          <div class="report-body">
+            <div class="report-meta">
+              <span class="report-date">2025.11.26</span>
+              <span class="report-tag tag-soccer">サッカー</span>
+            </div>
+            <p class="report-title">
+              智弁学園小学校との交流試合を開催しました！
+            </p>
+            <p>
+              安原小学校グラウンドにて、智弁学園小学校のみなさんと交流試合を行いました。子どもたちは全力でプレーし、たくさんの笑顔があふれました。
+            </p>
+            <span class="report-more">くわしく見る</span>
           </div>
         </div>
-        <p class="footer-desc">地域の子どもたちの健全な成長と、スポーツを通じた交流を目的に活動しています。</p>
-      </div>
-      <div class="footer-col">
-        <h4>MENU</h4>
-        <ul>
-          <li><a href="about.html">クラブ紹介</a></li>
-          <li><a href="info.html">活動内容</a></li>
-          <li><a href="report.html">活動報告</a></li>
-          <li><a href="trial.html">体験・入会</a></li>
-          <li><a href="fee.html">会費のご案内</a></li>
-          <li><a href="rules.html">会則</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>SUPPORT</h4>
-        <ul>
-          <li><a href="members.html">会員様向け</a></li>
-          <li><a href="contact.html">お問い合わせ</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>Copyright &copy; 安原スポーツクラブ All Rights Reserved.</p>
-      <p style="font-size:11px">Web Design: Template-Party</p>
-    </div>
-  </div>
-</footer>
 
-<a href="#" id="pagetop">↑</a>
-</body>
+        <!-- 2 -->
+        <div class="report-card reveal" data-cat="onigokko">
+          <div class="report-img-fallback">🏃</div>
+          <div class="report-body">
+            <div class="report-meta">
+              <span class="report-date">2025.03.16</span>
+              <span class="report-tag tag-onigokko">スポーツ鬼ごっこ</span>
+            </div>
+            <p class="report-title">
+              滋賀県希望ヶ丘文化公園でスポーツ鬼ごっこを楽しみました
+            </p>
+            <p>
+              滋賀県希望ヶ丘文化公園の広大な芝生で、スポーツ鬼ごっこを思いきり楽しみました。他クラブとの対戦もあり、刺激的な一日でした。
+            </p>
+            <span class="report-more">くわしく見る</span>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="report-card reveal" data-cat="yoga">
+          <div class="report-img-fallback">🧘</div>
+          <div class="report-body">
+            <div class="report-meta">
+              <span class="report-date">2024 夏</span>
+              <span class="report-tag tag-yoga">ヨガ</span>
+            </div>
+            <p class="report-title">親子ヨガイベントを開催しました</p>
+            <p>
+              夏の特別イベントとして、親子で参加できるヨガ教室を開催しました。普段とは違う穏やかな時間の中で、親子の絆を深めることができました。
+            </p>
+            <span class="report-more">くわしく見る</span>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="report-card reveal" data-cat="dance">
+          <div class="report-img-fallback">💃</div>
+          <div class="report-body">
+            <div class="report-meta">
+              <span class="report-date">2017.03.18</span>
+              <span class="report-tag tag-dance">ダンス</span>
+            </div>
+            <p class="report-title">スポーツフェスティバルでダンスを披露！</p>
+            <p>
+              地域スポーツフェスティバルのステージで、ダンス教室の生徒たちが日頃の練習の成果を元気いっぱいに披露しました。会場は大きな拍手に包まれました。
+            </p>
+            <span class="report-more">くわしく見る</span>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="report-card reveal" data-cat="tennis">
+          <div class="report-img-fallback">🎾</div>
+          <div class="report-body">
+            <div class="report-meta">
+              <span class="report-date">—</span>
+              <span class="report-tag tag-tennis">ショートテニス</span>
+            </div>
+            <p class="report-title">ショートテニス教室の活動の様子</p>
+            <p>
+              安原小学校体育館でのショートテニス教室の様子です。低学年・高学年に分かれ、楽しくラリーを続けながらテニスの基本を学んでいます。
+            </p>
+            <span class="report-more">くわしく見る</span>
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="report-card reveal" data-cat="yoga">
+          <div class="report-img-fallback">🌿</div>
+          <div class="report-body">
+            <div class="report-meta">
+              <span class="report-date">—</span>
+              <span class="report-tag tag-yoga">ヨガ</span>
+            </div>
+            <p class="report-title">高野山で森林セラピーヨガを体験しました</p>
+            <p>
+              大自然の中の高野山で、森林セラピーと組み合わせた特別ヨガイベントを開催。自然の香りと澄んだ空気の中で、心と体をリフレッシュしました。
+            </p>
+            <span class="report-more">くわしく見る</span>
+          </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="report-card reveal" data-cat="athletic">
+          <div class="report-img-fallback">🤸</div>
+          <div class="report-body">
+            <div class="report-meta">
+              <span class="report-date">—</span>
+              <span class="report-tag tag-athletic">アスレチック</span>
+            </div>
+            <p class="report-title">アスレチック教室の活動レポート</p>
+            <p>
+              様々な運動を通じて体を動かす楽しさを学ぶアスレチック教室。子どもたちが笑顔でチャレンジする姿が印象的でした！
+            </p>
+            <span class="report-more">くわしく見る</span>
+          </div>
+        </div>
+
+        <!-- 8 -->
+        <div class="report-card reveal" data-cat="event">
+          <div class="report-img-fallback">🎉</div>
+          <div class="report-body">
+            <div class="report-meta">
+              <span class="report-date">—</span>
+              <span class="report-tag tag-event">イベント</span>
+            </div>
+            <p class="report-title">クラブ発表会・年間まとめ</p>
+            <p>
+              1年間の活動のまとめとして、各教室が日頃の成果を発表するイベントを開催しました。子どもたちの成長を感じる温かいひとときでした。
+            </p>
+            <span class="report-more">くわしく見る</span>
+          </div>
+        </div>
+
+        <!-- 9 -->
+        <div class="report-card reveal" data-cat="onigokko">
+          <div class="report-img-fallback">👹</div>
+          <div class="report-body">
+            <div class="report-meta">
+              <span class="report-date">—</span>
+              <span class="report-tag tag-onigokko">スポーツ鬼ごっこ</span>
+            </div>
+            <p class="report-title">スポーツ鬼ごっこ大会に参加しました！</p>
+            <p>
+              正式なルールに基づくスポーツ鬼ごっこ大会に参加。チームワークを発揮しながら、白熱した試合を繰り広げました。
+            </p>
+            <span class="report-more">くわしく見る</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div>
+            <div class="footer-logo">
+              <div class="logo-ball">⚽</div>
+              <div class="logo-texts">
+                <span class="logo-main">安原スポーツクラブ</span>
+              </div>
+            </div>
+            <p class="footer-desc">
+              地域の子どもたちの健全な成長と、スポーツを通じた交流を目的に活動しています。
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>MENU</h4>
+            <ul>
+              <li><a href="about.html">クラブ紹介</a></li>
+              <li><a href="info.html">活動内容</a></li>
+              <li><a href="report.html">活動報告</a></li>
+              <li><a href="trial.html">体験・入会</a></li>
+              <li><a href="fee.html">会費のご案内</a></li>
+              <li><a href="rules.html">会則</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>SUPPORT</h4>
+            <ul>
+              <li><a href="members.html">会員様向け</a></li>
+              <li><a href="contact.html">お問い合わせ</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>Copyright &copy; 安原スポーツクラブ All Rights Reserved.</p>
+          <p style="font-size: 11px">Web Design: YasuharaSportsClub</p>
+        </div>
+      </div>
+    </footer>
+
+    <a href="#" id="pagetop">↑</a>
+  </body>
 </html>
