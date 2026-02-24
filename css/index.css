@@ -959,10 +959,6 @@ footer {
 }
 
 @media (max-width: 600px) {
-  #header {
-    padding: 0 16px;
-    height: 56px;
-  }
   .mobile-menu {
     top: 56px;
   }
