@@ -17,26 +17,6 @@
   direction: ltr;
   -webkit-font-smoothing: antialiased;
 }
-
-/* ─── HAMBURGER (index: アニメーション付き) ─── */
-.hamburger {
-  padding: 6px;
-}
-.hamburger span {
-  width: 24px;
-  height: 2px;
-  transition: all 0.3s;
-}
-.hamburger.open span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
-.hamburger.open span:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.open span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
-}
-
 /* ─── MOBILE MENU (index専用: 上部固定) ─── */
 .mobile-menu {
   top: 72px;
@@ -915,13 +895,6 @@ footer {
 
 /* ─── RESPONSIVE: index ─── */
 @media (max-width: 960px) {
-  #header {
-    padding: 0 20px;
-    height: 60px;
-  }
-  .logo-main {
-    font-size: 14px;
-  }
   .logo-sub {
     display: none;
   }
