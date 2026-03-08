@@ -1,7 +1,3 @@
-// =========================================================
-// report.js  |  活動報告ページ用スクリプト
-// =========================================================
-
 const SHEET_URL =
   "https://opensheet.elk.sh/1E0cY44BsBwalv3RZkzzdxaHLrA5nb52FAiW_jdVyZE0/活動報告";
 
@@ -18,47 +14,28 @@ async function loadReports() {
     data.forEach((row) => {
       const card = document.createElement("div");
       card.className = "report-card reveal";
-      card.dataset.cat = row.category.toLowerCase(); // 小文字に統一してフィルター用
+      card.dataset.cat = row.category.toLowerCase();
 
-      // タグにCSS対応クラスを追加
       let tagClass = "";
       switch (row.category.toLowerCase()) {
-        case "soccer":
-          tagClass = "tag-soccer";
-          break;
-        case "dance":
-          tagClass = "tag-dance";
-          break;
-        case "yoga":
-          tagClass = "tag-yoga";
-          break;
-        case "tennis":
-          tagClass = "tag-tennis";
-          break;
-        case "athletic":
-          tagClass = "tag-athletic";
-          break;
-        case "onigokko":
-          tagClass = "tag-onigokko";
-          break;
-        case "event":
-          tagClass = "tag-event";
-          break;
-        default:
-          tagClass = "";
+        case "soccer":   tagClass = "tag-soccer";   break;
+        case "dance":    tagClass = "tag-dance";    break;
+        case "yoga":     tagClass = "tag-yoga";     break;
+        case "tennis":   tagClass = "tag-tennis";   break;
+        case "athletic": tagClass = "tag-athletic"; break;
+        case "onigokko": tagClass = "tag-onigokko"; break;
+        case "event":    tagClass = "tag-event";    break;
       }
 
       card.innerHTML = `
         <div class="report-img">
           <img src="${row.image}" alt="">
         </div>
-
         <div class="report-body">
           <div class="report-meta">
             <span class="report-date">${row.date}</span>
             <span class="report-tag ${tagClass}">${row.category}</span>
           </div>
-
           <h3 class="report-title">${row.title}</h3>
           <p class="report-excerpt">${row.text}</p>
         </div>
